@@ -1,0 +1,34 @@
+{
+  "name": "atom-html",
+  "version": "2.0.0",
+  "author": "Red Pixel Themes",
+  "private": true,
+  "scripts": {
+    "build-css": "tailwindcss build -i assets/styles/main.css -o assets/styles/main.min.css",
+    "css": "postcss assets/styles/main.css -o assets/styles/main.min.css --verbose",
+    "server-reload": "browser-sync start --config './browser-sync-config.js'",
+    "develop": "concurrently 'npm:css -- --watch' 'npm:server-reload'",
+    "build": "npm run css -- --env 'production'",
+    "format": "npx prettier ./**/*.html"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%"
+  ],
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.4.1",
+    "@tailwindcss/typography": "^0.5.7",
+    "browser-sync": "^2.27.10",
+    "concurrently": "^7.4.0",
+    "cssnano": "^5.1.13",
+    "postcss-cli": "^9.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.18",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "tailwindcss": "^3.1.8"
+  }
+}
