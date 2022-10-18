@@ -26,6 +26,9 @@ module.exports = {
     },
 
     extend: {
+      borderRadius:{
+        '4xl': '2.25rem',
+      },
       spacing: {
         13: "3.25rem",
         15: "3.75rem",
@@ -67,7 +70,7 @@ module.exports = {
       },
       colors: {
         transparent: "transparent",
-        primary: "#6D15D2",
+        primary: "#5540af",
         secondary: "#252426",
         white: "#ffffff",
         black: "#000000",

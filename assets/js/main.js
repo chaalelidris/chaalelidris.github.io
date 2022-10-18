@@ -84,7 +84,7 @@
     let selectHeader = select('#header')
     if (selectHeader) {
         const headerScrolled = () => {
-            if (window.scrollY > 100) {
+            if (window.scrollY > 50) {
                 console.log("mlqkg")
                 selectHeader.classList.replace('py-6','py-3')
                 selectHeader.classList.add('bg-primary','backdrop-blur-lg')
