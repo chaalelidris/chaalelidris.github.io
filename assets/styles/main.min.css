@@ -1458,6 +1458,9 @@ html {
 .w-16 {
   width: 4rem;
 }
+.w-14 {
+  width: 3.5rem;
+}
 .w-100 {
   width: 25rem;
 }
@@ -1745,9 +1748,6 @@ html {
 }
 .bg-no-repeat {
   background-repeat: no-repeat;
-}
-.fill-grey-20 {
-  fill: #7c7c7c;
 }
 .object-cover {
   -o-object-fit: cover;
