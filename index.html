@@ -44,7 +44,7 @@
 </head>
 
 
-<body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative" x-data="{ mobileMenu: false }">
+<body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative " x-data="{ mobileMenu: false }">
 
   <div id="main" class="relative">
     <div x-data="{  
@@ -56,69 +56,89 @@
                         this.triggerNavItem(id)
                     }
                   }">
-      <div id="header" class="fixed w-full  z-50 top-0 py-6 bg-opacity-80 transition-all duration-500 rounded-b-4xl">
-        <div class="container flex items-center justify-between xl:px-24">
+
+
+
+
+      <div id="header"
+        class="fixed mx-auto w-11/12 z-50 top-4 left-4 right-4 py-2 bg-opacity-80 transition-all duration-500 rounded-full">
+        <div class="container flex items-center justify-between px-6 xl:px-16">
+
+
           <div>
             <span @click="triggerNavItem('#home')">
-              <img src="assets/img/logo_ic.svg" class="w-12 lg:w-16 cursor-pointer" alt="logo ic" />
+              <img src="assets/img/logo_ic.svg" class="w-10 lg:w-14 cursor-pointer" alt="logo ic" />
             </span>
           </div>
+
+
           <div class="hidden lg:block">
             <ul class="flex items-center">
 
               <li class="group pl-6">
-                <span @click="triggerNavItem('#home')"
-                  class="cursor-pointer pt-0.5 font-header font-semibold  uppercase text-white hover:text-xl transition-all">Home
-                </span>
+                <p @click="triggerNavItem('#home')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold  uppercase text-white hover:text-xl transition-all">
+                  Home
+                </p>
                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-white transition-all duration-500"></span>
               </li>
 
               <li class="group pl-6">
-                <span @click="triggerNavItem('#about')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">About</span>
+                <p @click="triggerNavItem('#about')"
+                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">
+                  About</p>
                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-white"></span>
               </li>
 
               <li class="group pl-6">
-                <span @click="triggerNavItem('#work')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">Work</span>
+                <p @click="triggerNavItem('#work')"
+                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">
+                  Work</p>
                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-white"></span>
               </li>
 
               <li class="group pl-6">
-                <span @click="triggerNavItem('#portfolio')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">Portfolio
-                </span>
+                <p @click="triggerNavItem('#portfolio')"
+                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">
+                  Portfolio
+                </p>
                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-white"></span>
               </li>
 
               <li class="group pl-6">
-                <span @click="triggerNavItem('#services')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">Services</span>
+                <p @click="triggerNavItem('#services')"
+                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">
+                  Services</p>
                 <span class="block h-0.5  w-full bg-transparent group-hover:bg-white"></span>
               </li>
 
 
               <li class="group pl-6">
-                <span @click="triggerNavItem('#statistics')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">Statistics</span>
+                <p @click="triggerNavItem('#statistics')"
+                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">
+                  Statistics</p>
                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-white"></span>
               </li>
 
 
               <li class="group pl-6">
-                <span @click="triggerNavItem('#contact')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">Contact</span>
+                <p @click="triggerNavItem('#contact')"
+                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">
+                  Contact</p>
                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-white"></span>
               </li>
 
             </ul>
           </div>
+
+
           <div class="block lg:hidden">
             <button @click="mobileMenu = true">
               <i class="bx bx-menu text-4xl text-white"></i>
             </button>
           </div>
+
+
         </div>
       </div>
 
@@ -178,7 +198,6 @@
           </ul>
         </div>
       </div>
-
 
 
       <!-- ======= Home Section ======= -->
@@ -249,7 +268,7 @@
       </div>
 
       <!-- ======= About Section ======= -->
-      <div id="about" class="bg-grey-50 ">
+      <div id="about" class="bg-grey-50 scroll-mt-8">
         <div class="container flex flex-col items-center mx-auto py-16 md:py-20 lg:w-11/12 lg:flex-row ">
           <div class="w-full text-center  sm:w-3/4 lg:w-3/5 lg:text-left">
             <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
@@ -262,7 +281,7 @@
               Current student and aspiring developer looking to join the
               workforce to gain real-world experience. Ability to complete
               tasks on time in both individual and team settings. Dependable
-              and reliable, ready to learn and grow with your company.
+              and reliable, flexible, self-taught always ready to learn.
               <br>
               <br>
               I am motivated by solving technical problems, I like challenging
@@ -373,6 +392,7 @@
         </div>
       </div>
 
+
       <!-- ======= Work Section ======= -->
       <div id="work" class="container py-16 md:py-20">
         <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
@@ -384,7 +404,7 @@
 
         <div class="relative mx-auto mt-12 flex flex-col w-full  lg:w-2/3">
           <!-- devider -->
-          <span class="left-2/5 absolute top-8 bottom-0 ml-10 hidden w-2 bg-grey-40 md:block rounded-full"></span>
+          <span class=" absolute top-8 bottom-0 left-2/5 ml-10 hidden w-2 bg-grey-40 rounded-full md:block"></span>
 
           <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
             <div class="md:w-2/5">
@@ -392,15 +412,20 @@
                 <span class="shrink-0">
                   <img src="assets/img/logo-cmsgu.svg" class="h-auto w-32" alt="company logo" />
                 </span>
+
                 <div class="relative ml-3 hidden w-full md:block rounded-full">
                   <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
                 </div>
+
+                <div
+                  class="absolute left-2/5 ml-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block">
+                </div>
               </div>
             </div>
+
             <div class="md:w-3/5">
               <div class="relative flex md:pl-18">
-                <span
-                  class="absolute left-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block"></span>
+
 
                 <div class="mt-1 flex">
                   <i class="bx bxs-right-arrow hidden w-8 text-primary text-2xl md:block"></i>
@@ -409,9 +434,11 @@
                     <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Web
                       Developer | Backend & Frontend</span>
                     <div class="pt-2">
-                      <span class="block font-body text-black">Web developper of <strong><a target="_blank" href="https://github.com/chaalelidris/educational-committee-management-system">“Educational committee
-                        management
-                        system - ECMS”</a> </strong> which is a project that involves the study,
+                      <span class="block font-body text-black">Web developper of <strong><a target="_blank"
+                            href="https://github.com/chaalelidris/educational-committee-management-system">“Educational
+                            committee
+                            management
+                            system - ECMS”</a> </strong> which is a project that involves the study,
                         design and implementation of a platform for managing
                         pedagogical committees within the departments </span>
                     </div>
@@ -420,21 +447,34 @@
               </div>
             </div>
           </div>
+
+
+
+          <!-- SIHATE -->
           <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
             <div class="md:w-2/5">
               <div class="flex justify-center md:justify-start">
+
                 <span class="shrink-0">
-                  <img src="assets/img/logo-sihate.svg" class="h-auto w-16" alt="company logo" />
+                  <img src="assets/img/logo-sihate.svg" class="h-16 w-auto" alt="company logo" />
                 </span>
+
                 <div class="relative ml-3 hidden w-full md:block rounded-full">
-                  <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
+                  <div class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></div>
                 </div>
+
+
+                <div
+                  class="absolute left-2/5 ml-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block">
+                </div>
+
+
+
               </div>
             </div>
+
             <div class="md:w-3/5">
               <div class="relative flex md:pl-18">
-                <span
-                  class="absolute left-6  hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block"></span>
 
                 <div class="mt-1 flex">
                   <i class="bx bxs-right-arrow hidden text-primary text-2xl md:block"></i>
@@ -453,6 +493,12 @@
               </div>
             </div>
           </div>
+
+
+
+
+
+
           <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
             <div class="md:w-2/5">
               <div class="flex justify-center md:justify-start">
@@ -462,12 +508,13 @@
                 <div class="relative ml-3 hidden w-full md:block rounded-full">
                   <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
                 </div>
+                <div
+                  class="absolute left-2/5 ml-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block">
+                </div>
               </div>
             </div>
             <div class="md:w-3/5">
               <div class="relative flex md:pl-18">
-                <span
-                  class="absolute left-6  hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block"></span>
 
                 <div class="mt-1 flex">
                   <i class="bx bxs-right-arrow hidden text-primary text-2xl md:block"></i>
@@ -484,6 +531,11 @@
               </div>
             </div>
           </div>
+
+
+
+
+
           <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
             <div class="md:w-2/5">
               <div class="flex justify-center md:justify-start">
@@ -493,12 +545,14 @@
                 <div class="relative ml-3 hidden w-full md:block rounded-full">
                   <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
                 </div>
+                <div
+                  class="absolute left-2/5 ml-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block">
+                </div>
               </div>
             </div>
+
             <div class="md:w-3/5">
               <div class="relative flex md:pl-18">
-                <span
-                  class="absolute left-6  hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block"></span>
 
                 <div class="mt-1 flex">
                   <i class="bx bxs-right-arrow hidden text-primary text-2xl md:block"></i>
@@ -521,7 +575,7 @@
 
 
       <!-- ======= Portfolio Section ======= -->
-      <div id="portfolio" class="container py-16 md:py-20">
+      <div id="portfolio" class="container py-16 md:py-20 ">
         <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
           Check out my Portfolio
         </h2>
@@ -530,19 +584,19 @@
         </h3>
 
         <div class="mx-auto grid w-full grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-12">
-          <a href="#portfolio" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+          <a href="#" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
             <img src="assets/img/portfolio-migfarm-project.png" class="shadow object-cover w-100 h-56 "
               alt="portfolio image" />
           </a>
-          <a href="#portfolio" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+          <a href="#" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
             <img src="assets/img/portfolio-comite-managment-system.png" class="shadow object-cover w-100 h-56 "
               alt="portfolio image" />
           </a>
-          <a href="#portfolio" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+          <a href="#" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
             <img src="assets/img/portfolio-sihate-healthcare.png" class="shadow object-cover w-100 h-56 "
               alt="portfolio image" />
           </a>
-          <a href="#portfolio" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+          <a href="#portfolio" class="mx-auto transform transition-all hover:scale-105 md:mx-0 ">
             <img src="assets/img/logo-newsize.png" class=" shadow object-cover w-100 h-56 " alt="portfolio image" />
           </a>
         </div>
@@ -577,25 +631,7 @@
               </p>
             </div>
           </div>
-          <div
-            class="group cursor-pointer rounded px-8 py-12 shadow  transition ease-in-out hover:scale-105 hover:bg-primary duration-300">
-            <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-              <div class="hidden group-hover:block">
-                <img src="assets/img/icon-content-white.svg" alt="content marketing icon" />
-              </div>
-              <div class="block group-hover:hidden">
-                <img src="assets/img/icon-content-black.svg" alt="content marketing icon" />
-              </div>
-            </div>
-            <div class="text-center">
-              <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-                Technical Writing
-              </h3>
-              <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                <!-- todo -->
-              </p>
-            </div>
-          </div>
+
 
           <div
             class="group cursor-pointer rounded px-8 py-12 shadow transition ease-in-out hover:scale-105 hover:bg-primary duration-300">
@@ -709,12 +745,12 @@
       <hr>
 
       <!-- ======= Statistics Section ======= -->
-      <div class="bg-cover bg-top bg-no-repeat pb-16 md:py-16 lg:py-24 "
-        style="background-image: url(assets/img/experience-figure.png)" id="statistics">
+      <div id="statistics" class="bg-cover bg-top bg-no-repeat pt-20 pb-8 pt-48 "
+        style="background-image: url(assets/img/experience-figure.svg)" >
         <div class="container">
-          <div class="mx-auto w-full bg-white py-16 shadow lg:py-20 xl:py-24 ">
+          <div class="mx-auto w-full bg-white py-16 shadow-2xl shadow-slate-900 lg:py-20 xl:py-24 rounded">
             <div class="grid grid-cols-1 gap-5 md:gap-8 md:grid-cols-2">
-              <div class="flex flex-col items-center justify-center text-center md:flex-row md:text-left">
+              <div class="flex flex-col items-center justify-center text-center md:flex-row md:text-left border-r-2">
                 <div>
                   <img src="assets/img/icon-project.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon project" />
                 </div>
@@ -727,6 +763,25 @@
                   </h4>
                 </div>
               </div>
+
+              
+              <div
+                class="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-left lg:mt-0">
+                <div>
+                  <img src="assets/img/icon-puzzle.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon puzzle" />
+                </div>
+                <div class="pt-5 md:pl-5 md:pt-0">
+                  <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
+                    5
+                  </h1>
+                  <h4 class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">
+                    Years Experience
+                  </h4>
+                </div>
+              </div>
+
+
+
 
               <!-- <div class="flex flex-col items-center justify-center text-center md:flex-row md:text-left">
                   <div>
@@ -757,20 +812,10 @@
                   </div>
                 </div> -->
 
-              <div
-                class="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-left lg:mt-0">
-                <div>
-                  <img src="assets/img/icon-puzzle.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon puzzle" />
-                </div>
-                <div class="pt-5 md:pl-5 md:pt-0">
-                  <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
-                    5
-                  </h1>
-                  <h4 class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">
-                    Years Experience
-                  </h4>
-                </div>
-              </div>
+
+
+
+
             </div>
           </div>
         </div>
@@ -854,15 +899,15 @@
             <!-- todo -->
           </p>
         </div>
-        
+
         <form class="mx-auto w-5/6 pt-10" method="post" action="https://formspree.io/f/maykdobp">
           <div class="flex flex-col md:flex-row">
             <input
               class="mr-3 w-full rounded bg-transparent placeholder-gray-400 border-2 border-grey-50 px-4 py-3 font-body text-white md:w-1/2 lg:mr-5 hover:border-yellow focus:outline-0 focus:border-yellow "
-              name="fullname" placeholder="Full name" type="text" id="name" required/>
+              name="fullname" placeholder="Full name" type="text" id="name" required />
             <input
               class="mt-6 w-full rounded bg-transparent placeholder-gray-400 border-2  border-grey-50 px-4 py-3 font-body text-white md:mt-0 md:ml-3 md:w-1/2 lg:ml-5 hover:border-yellow focus:outline-0 focus:border-yellow"
-              name="email" placeholder="Your email" type="email" id="contact-email" required/>
+              name="email" placeholder="Your email" type="email" id="contact-email" required />
           </div>
           <textarea name="content"
             class="mt-6 w-full rounded bg-transparent placeholder-gray-400 border-2 border-grey-50 px-4 py-3 font-body text-white md:mt-8 hover:border-yellow focus:outline-0 focus:border-yellow"
