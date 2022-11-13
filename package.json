@@ -1,11 +1,11 @@
 {
   "name": "idris-html",
   "version": "2.0.0",
-  "author": "Red Pixel Themes",
+  "author": "Idris Chaalel",
   "private": true,
   "scripts": {
-    "build-css": "tailwindcss build -i assets/styles/main.css -o assets/styles/main.min.css",
-    "css": "postcss assets/styles/main.css -o assets/styles/main.min.css --verbose",
+    "build-css": "tailwindcss build -i src/styles/main.css -o assets/styles/main.min.css",
+    "css": "postcss src/styles/main.css -o assets/styles/main.min.css --verbose",
     "server-reload": "browser-sync start --config './browser-sync-config.js'",
     "develop": "concurrently 'npm:css -- --watch' 'npm:server-reload'",
     "build": "npm run css -- --env 'production'",
@@ -22,6 +22,7 @@
     "browser-sync": "^2.27.10",
     "concurrently": "^7.4.0",
     "cssnano": "^5.1.13",
+    "flowbite": "^1.5.3",
     "postcss-cli": "^9.1.0"
   },
   "devDependencies": {

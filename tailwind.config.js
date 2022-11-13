@@ -1,8 +1,14 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-const colors = require('tailwindcss/colors')
 
 module.exports = {
-  content: ["./**/*.html"],
+  content: [
+    "./assets/js/main.js",
+    "./src/**/*.{html,js,css}",
+    "./index.html",
+    "./public/post.html",
+    "./node_modules/flowbite/**/*.js",
+
+  ],
   safelist: ["active"],
   theme: {
     fontFamily: {
@@ -14,7 +20,7 @@ module.exports = {
       xs: "375px",
       ...defaultTheme.screens,
     },
-    
+
     container: {
       center: true,
       padding: "1rem",
@@ -26,7 +32,11 @@ module.exports = {
     },
 
     extend: {
-      borderRadius:{
+      boxShadow: {
+        
+        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+      },
+      borderRadius: {
         '4xl': '2.25rem',
       },
       spacing: {
@@ -95,19 +105,21 @@ module.exports = {
       },
       inset: {
         "2/5": "40%",
+        "4/5": "80%",
       },
-      transitionDelay:{
-        '800':'800ms',
-        '900':'900ms',
-        '1500':'1500ms',
-        '2000':'2000ms'
+      transitionDelay: {
+        '800': '800ms',
+        '900': '900ms',
+        '1500': '1500ms',
+        '2000': '2000ms'
       }
-      
+
     },
   },
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
     require("@tailwindcss/aspect-ratio"),
+    require('flowbite/plugin'),
   ],
 };
