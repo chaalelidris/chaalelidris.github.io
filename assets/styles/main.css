@@ -1,8 +1,0 @@
-@tailwind base;
-@tailwind components;
-
-html {
-  @apply font-body antialiased;
-}
-@tailwind utilities;
-

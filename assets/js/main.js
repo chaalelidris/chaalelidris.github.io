@@ -45,10 +45,12 @@
     /**
     * Toggle .header-scrolled class to #header when page is scrolled
     */
+     
     let selectHeader = select('#header')
     if (selectHeader) {
         const headerScrolled = () => {
             if (window.scrollY > 50) {
+                
                 selectHeader.classList.replace('py-6', 'py-3')
                 selectHeader.classList.add('bg-primary', 'backdrop-blur-lg')
             } else {
@@ -60,6 +62,7 @@
         onscroll(document, headerScrolled)
     }
 
+    
     let selectProfile = select('#profile-pic')
     let selectProfileTitle = select('#profile-title')
     let selectProfileSubtitle = select('#profile-subtitle')
@@ -75,6 +78,8 @@
         }
         onload(window, annimateUp)
     }
+
+    
 
 
 
