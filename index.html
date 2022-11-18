@@ -21,96 +21,79 @@
     href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="assets/styles/main.min.css" media="screen" />
   <script defer src="assets/js/dist/cdn.min.js"></script>
   <script defer src="assets/js/cdn.min.js"></script>
 </head>
 
-
-<body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative " x-data="{ mobileMenu: false }">
-
+<body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative" x-data="{ mobileMenu: false }">
   <!--============================================= Header & Mobile menu ========================================-->
   <header>
     <div
       x-data="{ triggerNavItem(id) {$scroll(id)},triggerMobileNavItem(id) {mobileMenu = false;this.triggerNavItem(id)}}">
       <div id="header"
-        class="fixed mx-auto w-11/12 z-50 top-4 left-4 right-4 py-2 bg-opacity-80 transition-all duration-500 rounded-full shadow-xl">
+        class="fixed top-4 left-4 right-4 z-50 mx-auto w-11/12 rounded-full bg-opacity-80 py-2 shadow-xl transition-all duration-500">
         <div class="container flex items-center justify-between px-6 xl:px-16">
-
-
           <div>
             <span @click="triggerNavItem('#home')">
-              <img src="assets/img/logo_ic.svg" class="w-10 lg:w-14 cursor-pointer" alt="logo ic" />
+              <img src="assets/img/logo_ic.svg" class="w-10 cursor-pointer lg:w-14" alt="logo ic" />
             </span>
           </div>
 
-
           <div class="hidden lg:block">
             <ul class="flex items-center">
-
               <li class="group pl-6">
                 <a @click="triggerNavItem('#home')"
-                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white hover:text-xl transition-all">
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white transition-all hover:text-xl">
                   Home
                 </a>
-                
               </li>
 
               <li class="group pl-6">
                 <a @click="triggerNavItem('#about')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">
+                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl">
                   About</a>
-                
               </li>
 
               <li class="group pl-6">
                 <a @click="triggerNavItem('#work')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">
+                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl">
                   Work</a>
-                
               </li>
 
               <li class="group pl-6">
                 <a @click="triggerNavItem('#portfolio')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">
+                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl">
                   Portfolio
                 </a>
-                
               </li>
 
               <li class="group pl-6">
                 <a @click="triggerNavItem('#services')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">
+                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl">
                   Services</a>
-                
               </li>
-
 
               <li class="group pl-6">
                 <a @click="triggerNavItem('#statistics')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">
+                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl">
                   Statistics</a>
-                
               </li>
-
 
               <li class="group pl-6">
                 <a @click="triggerNavItem('#contact')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">
+                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl">
                   Contact</a>
-                
               </li>
 
               <li class="group pl-6">
                 <a @click="triggerNavItem('#certificates')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white hover:text-xl transition-all">
+                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl">
                   Certificates</a>
-                
               </li>
-
             </ul>
           </div>
-
 
           <div class="block lg:hidden">
             <button @click="mobileMenu = true">
@@ -130,51 +113,50 @@
           </button>
 
           <ul class="mt-8 flex flex-col">
-
             <li class="py-2">
               <span @click="triggerMobileNavItem('#home')"
                 class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Home</span>
             </li>
-            <hr class="opacity-20">
+            <hr class="opacity-20" />
             <li class="py-2">
               <span @click="triggerMobileNavItem('#about')"
                 class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
             </li>
-            <hr class="opacity-20">
+            <hr class="opacity-20" />
             <li class="py-2">
               <span @click="triggerMobileNavItem('#work')"
                 class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Work</span>
             </li>
-            <hr class="opacity-20">
+            <hr class="opacity-20" />
 
             <li class="py-2">
               <span @click="triggerMobileNavItem('#portfolio')"
                 class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Portfolio</span>
             </li>
-            <hr class="opacity-20">
+            <hr class="opacity-20" />
             <li class="py-2">
               <span @click="triggerMobileNavItem('#services')"
                 class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Services</span>
             </li>
-            <hr class="opacity-20">
+            <hr class="opacity-20" />
 
             <li class="py-2">
               <span @click="triggerMobileNavItem('#statistics')"
                 class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Statistics</span>
             </li>
-            <hr class="opacity-20">
+            <hr class="opacity-20" />
 
             <li class="py-2">
               <span @click="triggerMobileNavItem('#contact')"
                 class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
             </li>
-            <hr class="opacity-20">
+            <hr class="opacity-20" />
             <li class="py-2">
               <span @click="triggerMobileNavItem('#certificates')"
                 class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Certificates</span>
             </li>
 
-            <hr class="opacity-20">
+            <hr class="opacity-20" />
 
             <li class="py-2">
               <a target="_blank" href="assets/pdf/Idris-Chaalel-Resume.pdf"
@@ -188,39 +170,38 @@
 
   <main id="main" class="relative">
     <!-- ========================================= Home Section ============================================== -->
-    <div id="home" class="relative min-h-screen bg-cover bg-primary bg-center bg-no-repeat py-8 bg-blend-multiply"
+    <div id="home" class="relative min-h-screen bg-primary bg-cover bg-center bg-no-repeat py-8 bg-blend-multiply"
       style="background-image: url(assets/img/bg-cta.jpg)">
-
       <!-- gradiant
         ====================================== -->
 
-      <div class="absolute  inset-0 z-20 backdrop-blur-lg  bg-cover ">
-      </div>
+      <div class="absolute inset-0 z-20 bg-cover backdrop-blur-lg"></div>
 
       <!-- profile container
         ====================================== -->
 
-      <div id="profile" class="container px-0 relative z-30 pt-20 sm:pt-58 lg:pt-60 pb-12 sm:pb-48 lg:pb-48 ">
-        <div class="flex flex-col items-center justify-center lg:flex-row ">
-
+      <div id="profile" class="sm:pt-58 container relative z-30 px-0 pt-20 pb-12 sm:pb-48 lg:pt-60 lg:pb-48">
+        <div class="flex flex-col items-center justify-center lg:flex-row">
           <div id="profile-pic"
-            class="rounded-full p-2 bg-gradient-to-tr from-primary to-yellow shadow-xl translate-y-18 opacity-0 duration-1000 ease-out delay-75">
-            <img src="assets/img/profile-author-1.jpg" class="h-44 rounded-full sm:h-56 " alt="author" />
+            class="translate-y-18 rounded-full bg-gradient-to-tr from-primary to-yellow p-2 opacity-0 shadow-xl delay-75 duration-1000 ease-out">
+            <img src="assets/img/profile-author-1.jpg" class="h-44 rounded-full sm:h-56" alt="author" />
           </div>
 
           <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
             <h1 id="profile-title"
-              class="text-center font-header font-extrabold text-4xl md:text-6xl lg:text-7xl text-white  uppercase translate-y-18 opacity-0 duration-1000 ease-out delay-300">
+              class="translate-y-18 text-center font-header text-4xl font-extrabold uppercase text-white opacity-0 delay-300 duration-1000 ease-out md:text-6xl lg:text-7xl">
               Idris Chaalel
             </h1>
             <h1 id="profile-subtitle"
-              class="text-center font-body mt-4 text-xl md:text-2xl text-white/80 lg:text-left uppercase translate-y-14 opacity-0 duration-1000 ease-out delay-500">
+              class="mt-4 translate-y-14 text-center font-body text-xl uppercase text-white/80 opacity-0 delay-500 duration-1000 ease-out md:text-2xl lg:text-left">
               Systems Engineering student
             </h1>
             <div id="profile-connect"
-              class="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start translate-y-18 opacity-0 duration-1000 ease-out delay-700">
-              <div class="flex items-center justify-center sm:justify-start pl-0 md:pl-1">
-                <p class="font-body text-lg uppercase text-white">Let's connect</p>
+              class="flex translate-y-18 flex-col justify-center pt-3 opacity-0 delay-700 duration-1000 ease-out sm:flex-row sm:pt-5 lg:justify-start">
+              <div class="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
+                <p class="font-body text-lg uppercase text-white">
+                  Let's connect
+                </p>
                 <div class="hidden sm:block">
                   <i class="bx bx-chevron-right text-3xl text-yellow"></i>
                 </div>
@@ -244,9 +225,9 @@
               </div>
             </div>
             <div id="profile-button"
-              class="flex items-center justify-center lg:justify-start pt-5 translate-y-14 opacity-0 duration-1000 ease-out delay-1000">
+              class="flex translate-y-14 items-center justify-center pt-5 opacity-0 delay-1000 duration-1000 ease-out lg:justify-start">
               <a href="assets/pdf/Idris-Chaalel-Resume.pdf" target="_blank"
-                class="bg-transparent hover:bg-yellow text-lg text-white font-semibold hover:text-primary py-2 px-10 border-2 border-white hover:border-transparent transition duration-300 cursor-pointer uppercase tracking-widest">preview
+                class="cursor-pointer border-2 border-white bg-transparent py-2 px-10 text-lg font-semibold uppercase tracking-widest text-white transition duration-300 hover:border-transparent hover:bg-yellow hover:text-primary">preview
                 my resume</a>
             </div>
           </div>
@@ -254,24 +235,24 @@
       </div>
     </div>
 
-
     <!-- ========================================= About Section ============================================== -->
-    <div id="about" class="bg-grey-50 scroll-mt-8">
-      <div class="container flex flex-col items-center mx-auto py-16 md:py-20 lg:w-11/12 lg:flex-row ">
-        <div class="w-full text-center  sm:w-3/4 lg:w-3/5 lg:text-left">
+    <div id="about" class="scroll-mt-8 bg-grey-50">
+      <div class="container mx-auto flex flex-col items-center py-16 md:py-20 lg:w-11/12 lg:flex-row">
+        <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
           <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
             Who am I?
           </h2>
           <h4 class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-            I'm Idris Chaalel, a junior Web Developer | Designer | Machine learning enthusiast
+            I'm Idris Chaalel, a junior Web Developer | Designer | Machine
+            learning enthusiast
           </h4>
-          <p class="pt-6 font-body text-justify leading-relaxed text-grey-20">
+          <p class="pt-6 text-justify font-body leading-relaxed text-grey-20">
             Current student and aspiring developer looking to join the
-            workforce to gain real-world experience. Ability to complete
-            tasks on time in both individual and team settings. Dependable
-            and reliable, flexible, self-taught always ready to learn.
-            <br>
-            <br>
+            workforce to gain real-world experience. Ability to complete tasks
+            on time in both individual and team settings. Dependable and
+            reliable, flexible, self-taught always ready to learn.
+            <br />
+            <br />
             I am motivated by solving technical problems, I like challenging
             myself and advancing on a personal level, and I love collaborating
             and accomplishing big things as a part of a team,
@@ -340,7 +321,9 @@
           </div>
           <div class="pt-6">
             <div class="flex items-end justify-between">
-              <h4 class="font-body font-semibold uppercase text-black">Python</h4>
+              <h4 class="font-body font-semibold uppercase text-black">
+                Python
+              </h4>
               <h3 class="font-body text-3xl font-bold text-primary">70%</h3>
             </div>
             <div class="mt-2 h-3 w-full rounded-full bg-lila">
@@ -349,7 +332,9 @@
           </div>
           <div class="pt-6">
             <div class="flex items-end justify-between">
-              <h4 class="font-body font-semibold uppercase text-black">Django</h4>
+              <h4 class="font-body font-semibold uppercase text-black">
+                Django
+              </h4>
               <h3 class="font-body text-3xl font-bold text-primary">70%</h3>
             </div>
             <div class="mt-2 h-3 w-full rounded-full bg-lila">
@@ -369,7 +354,9 @@
           </div>
           <div class="pt-6">
             <div class="flex items-end justify-between">
-              <h4 class="font-body font-semibold uppercase text-black">Figma</h4>
+              <h4 class="font-body font-semibold uppercase text-black">
+                Figma
+              </h4>
               <h3 class="font-body text-3xl font-bold text-primary">80%</h3>
             </div>
             <div class="mt-2 h-3 w-full rounded-full bg-lila">
@@ -380,7 +367,6 @@
       </div>
     </div>
 
-
     <!-- ========================================= Work Section ============================================== -->
     <div id="work" class="container py-16 md:py-20">
       <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
@@ -390,9 +376,9 @@
         Here's what I did before
       </h3>
 
-      <div class="relative mx-auto mt-12 flex flex-col w-full  lg:w-2/3">
+      <div class="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
         <!-- devider -->
-        <span class=" absolute top-8 bottom-0 left-2/5 ml-10 hidden w-2 bg-grey-40 rounded-full md:block"></span>
+        <span class="absolute top-8 bottom-0 left-2/5 ml-10 hidden w-2 rounded-full bg-grey-40 md:block"></span>
 
         <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
           <div class="md:w-2/5">
@@ -401,7 +387,7 @@
                 <img src="assets/img/logo-cmsgu.svg" class="h-auto w-32" alt="company logo" />
               </span>
 
-              <div class="relative ml-3 hidden w-full md:block rounded-full">
+              <div class="relative ml-3 hidden w-full rounded-full md:block">
                 <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
               </div>
 
@@ -413,81 +399,69 @@
 
           <div class="md:w-3/5">
             <div class="relative flex md:pl-18">
-
-
               <div class="mt-1 flex">
-                <i class="bx bxs-right-arrow hidden w-8 text-primary text-2xl md:block"></i>
+                <i class="bx bxs-right-arrow hidden w-8 text-2xl text-primary md:block"></i>
                 <div class="md:-mt-1 md:pl-8">
                   <span class="block font-body font-bold text-grey-40">Apr 2020 - Sep 2020</span>
-                  <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Web
-                    Developer | Backend & Frontend</span>
+                  <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Web Developer | Backend
+                    & Frontend</span>
                   <div class="pt-2">
-                    <span class="block font-body text-black">Web developper of <strong><a target="_blank"
+                    <span class="block font-body text-black">Web developper of
+                      <strong><a target="_blank"
                           href="https://github.com/chaalelidris/educational-committee-management-system">“Educational
-                          committee
-                          management
-                          system - ECMS”</a> </strong> which is a project that involves the study,
-                      design and implementation of a platform for managing
-                      pedagogical committees within the departments </span>
+                          committee management system - ECMS”</a>
+                      </strong>
+                      which is a project that involves the study, design and
+                      implementation of a platform for managing pedagogical
+                      committees within the departments
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-
 
         <!-- SIHATE -->
         <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
           <div class="md:w-2/5">
             <div class="flex justify-center md:justify-start">
-
               <span class="shrink-0">
                 <img src="assets/img/logo-sihate.svg" class="h-16 w-auto" alt="company logo" />
               </span>
 
-              <div class="relative ml-3 hidden w-full md:block rounded-full">
+              <div class="relative ml-3 hidden w-full rounded-full md:block">
                 <div class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></div>
               </div>
-
 
               <div
                 class="absolute left-2/5 ml-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block">
               </div>
-
-
-
             </div>
           </div>
 
           <div class="md:w-3/5">
             <div class="relative flex md:pl-18">
-
               <div class="mt-1 flex">
-                <i class="bx bxs-right-arrow hidden text-primary text-2xl md:block"></i>
+                <i class="bx bxs-right-arrow hidden text-2xl text-primary md:block"></i>
                 <div class="md:-mt-1 md:pl-8">
                   <span class="block font-body font-bold text-grey-40">Apr 2021 - September 2021</span>
-                  <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Project Manager &
-                    web developer</span>
+                  <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Project Manager & web
+                    developer</span>
                   <div class="pt-2">
                     <span class="block font-body text-black">Project Manager and web developer of
                       <strong><a
                           href="https://github.com/chaalelidris/SIHATE-HEALTHCARE-PROJECT-DJANGO.git">“Sihate”</a>
-                      </strong> which is
-                      medical office file management web project, usign django python framework, Html5, Css3, W3css
-                      and javascript.</span>
+                      </strong>
+                      which is medical office file management web project,
+                      usign django python framework, Html5, Css3, W3css and
+                      javascript.</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-
-
-
-
 
         <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
           <div class="md:w-2/5">
@@ -495,7 +469,7 @@
               <span class="shrink-0">
                 <img src="assets/img/logo-gr.svg" class="h-auto w-14" alt="company logo" />
               </span>
-              <div class="relative ml-3 hidden w-full md:block rounded-full">
+              <div class="relative ml-3 hidden w-full rounded-full md:block">
                 <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
               </div>
               <div
@@ -505,9 +479,8 @@
           </div>
           <div class="md:w-3/5">
             <div class="relative flex md:pl-18">
-
               <div class="mt-1 flex">
-                <i class="bx bxs-right-arrow hidden text-primary text-2xl md:block"></i>
+                <i class="bx bxs-right-arrow hidden text-2xl text-primary md:block"></i>
                 <div class="md:-mt-1 md:pl-8">
                   <span class="block font-body font-bold text-grey-40">May 2022 - jul 2022</span>
                   <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Machine learning
@@ -522,17 +495,13 @@
           </div>
         </div>
 
-
-
-
-
         <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
           <div class="md:w-2/5">
             <div class="flex justify-center md:justify-start">
               <span class="shrink-0">
                 <img src="assets/img/logo-newsize.svg" class="h-auto w-32" alt="company logo" />
               </span>
-              <div class="relative ml-3 hidden w-full md:block rounded-full">
+              <div class="relative ml-3 hidden w-full rounded-full md:block">
                 <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
               </div>
               <div
@@ -543,17 +512,19 @@
 
           <div class="md:w-3/5">
             <div class="relative flex md:pl-18">
-
               <div class="mt-1 flex">
-                <i class="bx bxs-right-arrow hidden text-primary text-2xl md:block"></i>
+                <i class="bx bxs-right-arrow hidden text-2xl text-primary md:block"></i>
                 <div class="md:-mt-1 md:pl-8">
                   <span class="block font-body font-bold text-grey-40">Aug 2022 - Present</span>
                   <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Django web
                     developer</span>
                   <div class="pt-2">
-                    <span class="block font-body text-black">Django web developer of <strong><a target="_blank"
-                          href="https://github.com/chaalelidris/newsizedz">“Newsize - Ecom website”</a> </strong>
-                      ,website design and logo maker using figma and adobe illustrator</span>
+                    <span class="block font-body text-black">Django web developer of
+                      <strong><a target="_blank" href="https://github.com/chaalelidris/newsizedz">“Newsize - Ecom
+                          website”</a>
+                      </strong>
+                      ,website design and logo maker using figma and adobe
+                      illustrator</span>
                   </div>
                 </div>
               </div>
@@ -563,10 +534,8 @@
       </div>
     </div>
 
-
-
     <!-- ========================================= Portfolio Section ========================================= -->
-    <div id="portfolio" class="container py-16 md:py-20 ">
+    <div id="portfolio" class="container py-16 md:py-20">
       <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
         Check out my Portfolio
       </h2>
@@ -574,30 +543,29 @@
         Here's what I have done with the past
       </h3>
 
-      <div class="mx-auto grid w-full grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-12">
+      <div class="mx-auto grid w-full grid-cols-1 gap-4 pt-12 md:grid-cols-3 lg:grid-cols-4">
         <a target="_blank"
           href="https://www.figma.com/proto/YwLXHzmytLkwGt53ljS6mW/Mig-farm-project?page-id=0%3A1&node-id=6%3A6&viewport=468%2C149%2C0.21&scaling=min-zoom"
           class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-          <img src="assets/img/portfolio-migfarm-project.png" class="shadow object-cover w-100 h-56 "
+          <img src="assets/img/portfolio-migfarm-project.png" class="h-56 w-100 object-cover shadow"
             alt="portfolio image" />
         </a>
         <a target="_blank" href="https://github.com/chaalelidris/educational-committee-management-system.git"
           class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-          <img src="assets/img/portfolio-comite-managment-system.png" class="shadow object-cover w-100 h-56 "
+          <img src="assets/img/portfolio-comite-managment-system.png" class="h-56 w-100 object-cover shadow"
             alt="portfolio image" />
         </a>
         <a target="_blank" href="https://github.com/chaalelidris/SIHATE-HEALTHCARE-PROJECT-DJANGO.git"
           class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-          <img src="assets/img/portfolio-sihate-healthcare.png" class="shadow object-cover w-100 h-56 "
+          <img src="assets/img/portfolio-sihate-healthcare.png" class="h-56 w-100 object-cover shadow"
             alt="portfolio image" />
         </a>
         <a target="_blank" href="https://github.com/chaalelidris/newsizedz.git"
-          class="mx-auto transform transition-all hover:scale-105 md:mx-0 ">
-          <img src="assets/img/logo-newsize.png" class=" shadow object-cover w-100 h-56 " alt="portfolio image" />
+          class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+          <img src="assets/img/logo-newsize.png" class="h-56 w-100 object-cover shadow" alt="portfolio image" />
         </a>
       </div>
     </div>
-
 
     <!-- ========================================= Services Section ========================================== -->
     <div id="services" class="container py-16 md:py-20">
@@ -610,7 +578,7 @@
 
       <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3">
         <div
-          class="group cursor-pointer rounded px-8 py-12 shadow transition ease-in-out hover:scale-105 hover:bg-primary duration-300 ">
+          class="group cursor-pointer rounded px-8 py-12 shadow transition duration-300 ease-in-out hover:scale-105 hover:bg-primary">
           <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="hidden group-hover:block">
               <img src="assets/img/icon-development-white.svg" alt="development icon" />
@@ -629,9 +597,8 @@
           </div>
         </div>
 
-
         <div
-          class="group cursor-pointer rounded px-8 py-12 shadow transition ease-in-out hover:scale-105 hover:bg-primary duration-300">
+          class="group cursor-pointer rounded px-8 py-12 shadow transition duration-300 ease-in-out hover:scale-105 hover:bg-primary">
           <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="hidden group-hover:block">
               <img src="assets/img/icon-mobile-white.svg" alt="Mobile Application icon" />
@@ -651,7 +618,7 @@
         </div>
 
         <div
-          class="group cursor-pointer rounded px-8 py-12 shadow transition ease-in-out hover:scale-105 hover:bg-primary duration-300">
+          class="group cursor-pointer rounded px-8 py-12 shadow transition duration-300 ease-in-out hover:scale-105 hover:bg-primary">
           <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="hidden group-hover:block">
               <img src="assets/img/icon-design-white.svg" alt="Theme Design icon" />
@@ -671,7 +638,7 @@
         </div>
 
         <div
-          class="group cursor-pointer rounded px-8 py-12 shadow transition ease-in-out hover:scale-105 hover:bg-primary duration-300">
+          class="group cursor-pointer rounded px-8 py-12 shadow transition duration-300 ease-in-out hover:scale-105 hover:bg-primary">
           <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="hidden group-hover:block">
               <img src="assets/img/icon-graphics-white.svg" alt="Graphic Design icon" />
@@ -692,18 +659,14 @@
       </div>
     </div>
 
-
     <!-- ========================================= Statistics Section ======================================== -->
-    <div id="statistics" class="bg-cover bg-top bg-no-repeat pt-36 pb-12 lg:pt-52 mt-10"
+    <div id="statistics" class="mt-10 bg-cover bg-top bg-no-repeat pt-36 pb-12 lg:pt-52"
       style="background-image: url(assets/img/experience-figure.svg)">
-
       <div
-        class="mx-auto w-full lg:w-11/12 bg-white/20  border border-gray-400 shadow-2xl shadow-slate-900 py-16 lg:py-20 xl:py-24 rounded-2xl">
-        <div class="grid grid-cols-1 gap-5 md:gap-8 md:grid-cols-2">
-
-
+        class="mx-auto w-full rounded-2xl border border-gray-400 bg-white/20 py-16 shadow-2xl shadow-slate-900 lg:w-11/12 lg:py-20 xl:py-24">
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-8">
           <div
-            class="flex flex-col items-center justify-center text-center md:flex-row md:text-left border-r border-gray-400">
+            class="flex flex-col items-center justify-center border-r border-gray-400 text-center md:flex-row md:text-left">
             <div>
               <img src="assets/img/icon-project-white.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon project" />
             </div>
@@ -711,12 +674,11 @@
               <h1 class="font-body text-2xl font-bold text-yellow md:text-4xl">
                 5
               </h1>
-              <h4 class="text-grey-50 font-header text-base font-medium leading-loose md:text-xl">
+              <h4 class="font-header text-base font-medium leading-loose text-grey-50 md:text-xl">
                 Finished Projects
               </h4>
             </div>
           </div>
-
 
           <div
             class="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-left lg:mt-0">
@@ -727,12 +689,11 @@
               <h1 class="font-body text-2xl font-bold text-yellow md:text-4xl">
                 5
               </h1>
-              <h4 class="text-grey-50 font-header text-base font-medium leading-loose md:text-xl">
+              <h4 class="font-header text-base font-medium leading-loose text-grey-50 md:text-xl">
                 Years Experience
               </h4>
             </div>
           </div>
-
 
           <!-- <div class="flex flex-col items-center justify-center text-center md:flex-row md:text-left">
                 <div>
@@ -762,103 +723,55 @@
                   </h4>
                 </div>
               </div> -->
-
         </div>
-
       </div>
     </div>
-
 
     <!-- ========================================= Certificates section ====================================== -->
-    <div id="certificates" class="bg-cover bg-primary bg-blend-multiply bg-top bg-no-repeat px-10 py-20"
-      style="background-image: url(assets/img/bg-hero.jpg)">
-      <div id="indicators-carousel" class="relative" data-carousel="static">
-        <!-- Carousel wrapper -->
-        <div class="relative h-64 xs:h-80 sm:h-92 md:h-108 lg:h-160 overflow-hidden rounded-lg w-full md:w-4/5 lg:w-4/6 mx-auto">
-          
-          <!-- Item 1 -->
-          <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20 "
-            data-carousel-item="active">
-            <a target="_blank" href="https://www.kaggle.com/learn/certification/chaalelidris/intro-to-machine-learning"><img src="assets/img/certificates/IDRIS CHAALEL - Intro to Machine Learning.png"
-              class="absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 mx-auto w-full  cursor-pointer" alt="..."></a> 
-          </div>
-          <!-- Item 2 -->
-          <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10 "
-            data-carousel-item="">
-            <a target="_blank" href="https://www.udemy.com/certificate/UC-5d3f3617-e326-4be8-a76b-a070bc77ce26/"><img src="assets/img/certificates/UC-5d3f3617-e326-4be8-a76b-a070bc77ce26.jpg"
-              class="absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 mx-auto w-full  cursor-pointer" alt="..."></a> 
-          </div>
-          <!-- Item 3 -->
-          <div class="hidden duration-700 ease-in-out absolute inset-0 transition-all transform " data-carousel-item="">
-            <a target="_blank" href="https://www.udemy.com/certificate/UC-6768e143-ded3-4063-8139-925c3647d050/"><img src="assets/img/certificates/UC-6768e143-ded3-4063-8139-925c3647d050.jpg"
-              class="absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 mx-auto w-full  cursor-pointer" alt="..."></a> 
-          </div>
-          <!-- Item 4 -->
-          <div class="hidden duration-700 ease-in-out absolute inset-0 transition-all transform " data-carousel-item="">
-            <a target="_blank" href="https://www.udemy.com/certificate/UC-bfaf55a3-2457-4328-9653-279f2bab6213/"><img src="assets/img/certificates/UC-bfaf55a3-2457-4328-9653-279f2bab6213.jpg"
-              class="absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 mx-auto w-full  cursor-pointer" alt="..."></a> 
-          </div>
-          <div class=" absolute bottom-0 top-4/5 inset-x-0 bg-gradient-to-t from-gray-900 z-30">
-          </div>
-          <!-- Slider indicators -->
-          <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-            
-            <button type="button" class="w-3 h-3 rounded-full bg-white dark:bg-gray-800" aria-current="true"
-              aria-label="Slide 1" data-carousel-slide-to="0"></button>
-            <button type="button"
-              class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800"
-              aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-            <button type="button"
-              class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800"
-              aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-            <button type="button"
-              class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800"
-              aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-
-          </div>
-
-          <!-- Slider controls -->
-          <button type="button"
-            class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-            data-carousel-prev="">
-            <span
-              class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-primary/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-primary dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-              <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
-                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-              </svg>
-              <span class="sr-only">Previous</span>
-            </span>
-          </button>
-
-          <button type="button"
-            class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-            data-carousel-next="">
-            <span
-              class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-primary/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-primary dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-              <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
-                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-              <span class="sr-only">Next</span>
-            </span>
-          </button>
+    <!-- Slider main container -->
+    <div class="swiper w-3/6">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <a class="cursor-grab focus:cursor-grabbing" target="_blank"
+            href="https://www.kaggle.com/learn/certification/chaalelidris/intro-to-machine-learning">
+            <img class="mx-auto" src="assets/img/certificates/IDRIS CHAALEL - Intro to Machine Learning.png" alt="" />
+          </a>
         </div>
+        <div class="swiper-slide">
+          <a class="cursor-grab focus:cursor-grabbing" target="_blank"
+            href="https://www.udemy.com/certificate/UC-5d3f3617-e326-4be8-a76b-a070bc77ce26/"><img class=""
+              src="assets/img/certificates/UC-5d3f3617-e326-4be8-a76b-a070bc77ce26.jpg" alt="" /></a>
+        </div>
+        <div class="swiper-slide">
+          <a class="cursor-grab focus:cursor-grabbing" target="_blank"
+            href="https://www.udemy.com/certificate/UC-6768e143-ded3-4063-8139-925c3647d050/"><img class=""
+              src="assets/img/certificates/UC-6768e143-ded3-4063-8139-925c3647d050.jpg" alt="" /></a>
+        </div>
+        <div class="swiper-slide">
+          <a class="cursor-grab focus:cursor-grabbing" target="_blank"
+            href="https://www.udemy.com/certificate/UC-bfaf55a3-2457-4328-9653-279f2bab6213/"><img class="" src="assets/img/certificates/UC-bfaf55a3-2457-4328-9653-279f2bab6213.jpg" alt="" /></a>
+          
+        </div>
+        ...
       </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
     </div>
-
-
-
-
-
-
   </main>
 
   <!-- ========================================= Contact & Footer Section =========================================== -->
   <footer>
-    <div class="relative bg-primary bg-cover bg-center bg-no-repeat  bg-blend-multiply  "
-      style="background-image: url(assets/img/bg-hero.jpg) ">
-
+    <div class="relative bg-primary bg-cover bg-center bg-no-repeat bg-blend-multiply"
+      style="background-image: url(assets/img/bg-hero.jpg)">
       <!-- ======= Contact Section ======= -->
       <div id="contact" class="py-16 lg:py-24">
         <h2 class="text-center font-header text-4xl font-semibold uppercase text-white sm:text-5xl lg:text-6xl">
@@ -876,23 +789,23 @@
         <form class="mx-auto w-5/6 pt-10" method="post" action="https://formspree.io/f/maykdobp">
           <div class="flex flex-col md:flex-row">
             <input
-              class="mr-3 w-full rounded bg-transparent placeholder-gray-400 border-2 border-grey-50 px-4 py-3 font-body text-white md:w-1/2 lg:mr-5 hover:border-yellow focus:outline-0 focus:border-yellow "
+              class="mr-3 w-full rounded border-2 border-grey-50 bg-transparent px-4 py-3 font-body text-white placeholder-gray-400 hover:border-yellow focus:border-yellow focus:outline-0 md:w-1/2 lg:mr-5"
               name="fullname" placeholder="Full name" type="text" id="name" required />
             <input
-              class="mt-6 w-full rounded bg-transparent placeholder-gray-400 border-2  border-grey-50 px-4 py-3 font-body text-white md:mt-0 md:ml-3 md:w-1/2 lg:ml-5 hover:border-yellow focus:outline-0 focus:border-yellow"
+              class="mt-6 w-full rounded border-2 border-grey-50 bg-transparent px-4 py-3 font-body text-white placeholder-gray-400 hover:border-yellow focus:border-yellow focus:outline-0 md:mt-0 md:ml-3 md:w-1/2 lg:ml-5"
               name="email" placeholder="Your email" type="email" id="contact-email" required />
           </div>
           <textarea name="content"
-            class="mt-6 w-full rounded bg-transparent placeholder-gray-400 border-2 border-grey-50 px-4 py-3 font-body text-white md:mt-8 hover:border-yellow focus:outline-0 focus:border-yellow"
+            class="mt-6 w-full rounded border-2 border-grey-50 bg-transparent px-4 py-3 font-body text-white placeholder-gray-400 hover:border-yellow focus:border-yellow focus:outline-0 md:mt-8"
             placeholder="Message" id="message" cols="30" rows="10" required></textarea>
           <button type="submit"
-            class="mt-6 w-full flex items-center justify-center rounded  placeholder-gray-400 bg-primary px-8 py-3 font-header text-lg font-bold uppercase text-white hover:bg-yellow hover:text-primary transition-all">
+            class="mt-6 flex w-full items-center justify-center rounded bg-primary px-8 py-3 font-header text-lg font-bold uppercase text-white placeholder-gray-400 transition-all hover:bg-yellow hover:text-primary">
             Send
             <i class="bx bx-chevron-right relative -right-2 text-3xl"></i>
           </button>
         </form>
 
-        <div class="flex flex-col pt-16 lg:flex-row mx-auto justify-between w-5/6">
+        <div class="mx-auto flex w-5/6 flex-col justify-between pt-16 lg:flex-row">
           <div class="w-full border-l-2 border-t-2 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3">
             <div class="flex items-center">
               <i class="bx bx-phone text-2xl text-grey-40"></i>
@@ -931,14 +844,13 @@
               City 390 Log - 27 - 296 - Guelma, Algeria
             </p>
           </div> -->
-
         </div>
       </div>
 
-      <hr class="w-3/4 mx-auto my-20">
+      <hr class="mx-auto my-20 w-3/4" />
 
       <!-- ======= Footer Section ======= -->
-      <div class="flex flex-col md:flex-row  mx-auto justify-between  w-3/4">
+      <div class="mx-auto flex w-3/4 flex-col justify-between md:flex-row">
         <p class="text-center font-body text-white md:text-left">
           © Copyright 2022. All right reserved, Idris CHAALEL.
         </p>
@@ -960,14 +872,34 @@
           </a>
         </div>
       </div>
-
     </div>
   </footer>
 
-
-
   <script src="assets/js/main.js"></script>
-  <script src="node_modules\flowbite\dist\flowbite.js"></script>
+  <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".swiper", {
+      // Optional parameters
+      direction: "horizontal",
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: ".swiper-pagination",
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: ".swiper-scrollbar",
+      },
+    });
+  </script>
 </body>
 
 </html>
