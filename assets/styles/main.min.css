@@ -1459,11 +1459,11 @@ html {
 .w-24 {
   width: 6rem;
 }
-.w-6 {
-  width: 1.5rem;
-}
 .w-5\/6 {
   width: 83.333333%;
+}
+.w-6 {
+  width: 1.5rem;
 }
 .w-3\/4 {
   width: 75%;
