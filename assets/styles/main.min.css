@@ -1643,9 +1643,9 @@ html {
 .bg-white\/5 {
   background-color: rgb(255 255 255 / 0.05);
 }
-.bg-slate-100 {
+.bg-white {
   --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 .bg-opacity-80 {
   --tw-bg-opacity: 0.8;
@@ -2450,10 +2450,6 @@ html {
 
   .lg\:border-t-2 {
     border-top-width: 2px;
-  }
-
-  .lg\:border-l-0 {
-    border-left-width: 0px;
   }
 
   .lg\:py-20 {
