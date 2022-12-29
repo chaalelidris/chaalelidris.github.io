@@ -21,7 +21,14 @@
     href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css" />
+
+  <!-- Required Core Stylesheet -->
+  <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+
+  <!-- Optional Theme Stylesheet -->
+  <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+
+  <!-- tailwind -->
   <link rel="stylesheet" href="assets/styles/main.min.css" media="screen" />
 
 </head>
@@ -32,7 +39,7 @@
     <div
       x-data="{ triggerNavItem(id) {$scroll(id)},triggerMobileNavItem(id) {mobileMenu = false;this.triggerNavItem(id)}}">
       <div id="header"
-        class="fixed top-4 left-4 right-4 z-50 mx-auto w-11/12 rounded-full bg-opacity-80 py-2 shadow-xl transition-all duration-500">
+        class="fixed top-4 left-4 right-4 z-50 mx-auto w-11/12 rounded-full bg-opacity-80 py-2  transition-all duration-500">
         <div class="container flex items-center justify-between px-6 xl:px-16">
           <div>
             <span @click="triggerNavItem('#home')">
@@ -171,14 +178,11 @@
     <!-- ========================================= Home Section ============================================== -->
     <div id="home" class="relative min-h-screen bg-primary bg-cover bg-center bg-no-repeat py-8 bg-blend-multiply"
       style="background-image: url(assets/img/bg-cta.jpg)">
-      <!-- gradiant
-        ====================================== -->
 
+      <!-- gradiant -->
       <div class="absolute inset-0 z-20 bg-cover backdrop-blur-lg"></div>
 
-      <!-- profile container
-        ====================================== -->
-
+      <!-- profile container -->
       <div id="profile" class="sm:pt-58 container relative z-30 px-0 pt-20 pb-12 sm:pb-48 lg:pt-60 lg:pb-48">
         <div class="flex flex-col items-center justify-center lg:flex-row">
           <div id="profile-pic"
@@ -546,27 +550,28 @@
         <div class="mx-auto transform transition-all hover:scale-105 md:mx-0 ">
           <a target="_blank"
             href="https://www.figma.com/proto/YwLXHzmytLkwGt53ljS6mW/Mig-farm-project?page-id=0%3A1&node-id=6%3A6&viewport=468%2C149%2C0.21&scaling=min-zoom">
-            <img src="assets/img/portfolio-migfarm-project.png" class="h-56 w-100 object-cover overflow-hidden rounded-2xl shadow"
+            <img src="assets/img/portfolio-migfarm-project.png"
+              class="h-56 w-100 object-cover overflow-hidden rounded-2xl shadow" alt="portfolio image" />
+          </a>
+        </div>
+        <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+          <a target="_blank" href="https://github.com/chaalelidris/educational-committee-management-system.git">
+            <img src="assets/img/portfolio-comite-managment-system.png"
+              class="h-56 w-100 object-cover rounded-2xl shadow" alt="portfolio image" />
+          </a>
+        </div>
+        <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+          <a target="_blank" href="https://github.com/chaalelidris/SIHATE-HEALTHCARE-PROJECT-DJANGO.git">
+            <img src="assets/img/portfolio-sihate-healthcare.png" class="h-56 w-100 object-cover rounded-2xl shadow"
               alt="portfolio image" />
           </a>
         </div>
         <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-          <a target="_blank"
-            href="https://github.com/chaalelidris/educational-committee-management-system.git">
-            <img src="assets/img/portfolio-comite-managment-system.png" class="h-56 w-100 object-cover rounded-2xl shadow"
+          <a target="_blank" href="https://github.com/chaalelidris/newsizedz.git">
+            <img src="assets/img/logo-newsize.png" class="h-56 w-100 object-cover rounded-2xl shadow"
               alt="portfolio image" />
-          </a></div>
-        <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-          <a target="_blank"
-            href="https://github.com/chaalelidris/SIHATE-HEALTHCARE-PROJECT-DJANGO.git">
-            <img src="assets/img/portfolio-sihate-healthcare.png" class="h-56 w-100 object-cover rounded-2xl shadow"
-              alt="portfolio image" />
-          </a></div>
-        <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-          <a target="_blank"
-            href="https://github.com/chaalelidris/newsizedz.git">
-            <img src="assets/img/logo-newsize.png" class="h-56 w-100 object-cover rounded-2xl shadow" alt="portfolio image" />
-          </a></div>
+          </a>
+        </div>
 
 
 
@@ -702,40 +707,50 @@
             </div>
           </div>
 
-          <!-- <div class="flex flex-col items-center justify-center text-center md:flex-row md:text-left">
-                <div>
-                  <img src="assets/img/icon-award.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon award" />
-                </div>
-                <div class="pt-5 md:pl-5 md:pt-0">
-                  <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
-                    3
-                  </h1>
-                  <h4 class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">
-                    Awards Won
-                  </h4>
-                </div>
-              </div> -->
+        </div>
+      </div>
 
-          <!-- <div
-                class="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-left lg:mt-0">
-                <div>
-                  <img src="assets/img/icon-happy.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon happy clients" />
-                </div>
-                <div class="pt-5 md:pl-5 md:pt-0">
-                  <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
-                    8
-                  </h1>
-                  <h4 class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">
-                    Happy Clients
-                  </h4>
-                </div>
-              </div> -->
+      <!-- Certificates -->
+      <div id="certificates" class="bg-transparent mx-auto w-5/6 mt-10">
+  
+        <div  class="images glide ">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+              <li class="glide__slide"><img src="assets/img/certificates/IDRIS CHAALEL - Intro to Machine Learning.png"
+                  alt="">
+              </li>
+              <li class="glide__slide"><img src="assets/img/certificates/UC-5d3f3617-e326-4be8-a76b-a070bc77ce26.jpg"
+                  alt="">
+              </li>
+              <li class="glide__slide"><img src="assets/img/certificates/UC-6768e143-ded3-4063-8139-925c3647d050.jpg"
+                  alt="">
+              </li>
+              <li class="glide__slide"><img src="assets/img/certificates/UC-bfaf55a3-2457-4328-9653-279f2bab6213.jpg"
+                  alt="">
+              </li>
+            </ul>
+          </div>
+  
+          <!-- Controls -->
+          <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow left-2  bg-slate-100 text-gray-900 rounded-full" data-glide-dir="<">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+            <button class="glide__arrow right-2 bg-slate-100 text-gray-900 rounded-full" data-glide-dir=">">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- ========================================= Certificates section ====================================== -->
-    
+
   </main>
 
   <!-- ========================================= Contact & Footer Section =========================================== -->
@@ -848,30 +863,30 @@
   <script defer src="assets/js/dist/cdn.min.js"></script>
   <script defer src="assets/js/cdn.min.js"></script>
   <script src="assets/js/main.js"></script>
-  <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
+
+  <!-- scripts for glide js-->
+  <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+
   <script>
-    const swiper = new Swiper(".swiper", {
-      // Optional parameters
-      direction: "horizontal",
-      loop: true,
+    const config = {
+      type: 'carousel',
+      focusAt: '2',
+      autoplay: 2500,
+      perView: 2,
+      breakpoints: {
+        1024: {
+          perView: 2
+        },
+        600: {
+          perView: 1
+        }
+      }
 
-      // If we need pagination
-      pagination: {
-        el: ".swiper-pagination",
-      },
+    };
 
-      // Navigation arrows
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-
-      // And if we need scrollbar
-      scrollbar: {
-        el: ".swiper-scrollbar",
-      },
-    });
+    new Glide('.glide', config).mount()
   </script>
+
 </body>
 
 </html>
