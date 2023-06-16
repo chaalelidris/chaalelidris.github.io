@@ -2,25 +2,34 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-  <meta charset="utf-8" />
-  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>IDRIS CHAALEL</title>
-  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
-  <meta property="og:site_name" content="Idris Chaalel Portfolio" />
-  <meta property="og:image" content="assets/img/social.jpg" />
-  <meta property="og:title" content="IDRIS CHAALEL" />
-  <meta property="og:locale" content="en_US" />
-  <meta name="description" content="Idris Chaalel, Systems Engineering Student" />
-  <meta name="theme-color" content="#5540af" />
-  <link crossorigin="crossorigin" href="https://fonts.gstatic.com" rel="preconnect" />
-  <link as="style"
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
-    rel="preload" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+  <!-- Open Graph metadata -->
+  <meta property="og:site_name" content="Idris Chaalel Portfolio">
+  <meta property="og:image" content="assets/img/social.jpg">
+  <meta property="og:title" content="IDRIS CHAALEL">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Page description -->
+  <meta name="description" content="Idris Chaalel, Systems Engineering Student">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#5540af">
+
+  <!-- Preconnect for external resources -->
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+
+  <!-- Font stylesheets -->
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    rel="stylesheet">
+
+  <!-- Boxicons stylesheet -->
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
 
   <!-- Required Core Stylesheet -->
   <link rel="stylesheet" href="assets/styles/glide.core.min.css">
@@ -28,13 +37,12 @@
   <!-- Optional Theme Stylesheet -->
   <link rel="stylesheet" href="assets/styles/glide.theme.min.css">
 
-  <!-- tailwind -->
-  <link rel="stylesheet" href="assets/styles/main.min.css" media="screen" />
-
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="assets/styles/main.min.css" media="screen">
 </head>
 
-<body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative" x-data="{ mobileMenu: false }">
-  <!--============================================= Header & Mobile menu ========================================-->
+<body x-data="{ mobileMenu: false }" class="relative" :class="{ 'overflow-hidden max-h-screen': mobileMenu }">
+  <!-- Header & Mobile menu -->
   <header>
     <div
       x-data="{ triggerNavItem(id) {$scroll(id)},triggerMobileNavItem(id) {mobileMenu = false;this.triggerNavItem(id)}}">
@@ -47,7 +55,7 @@
             </span>
           </div>
 
-          <div class="hidden lg:block">
+          <nav class="hidden lg:block">
             <ul class="flex items-center">
               <li class="group pl-6">
                 <a @click="triggerNavItem('#home')"
@@ -98,8 +106,9 @@
                   class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl">
                   Certificates</a>
               </li>
+
             </ul>
-          </div>
+          </nav>
 
           <div class="block lg:hidden">
             <button @click="mobileMenu = true">
@@ -109,7 +118,7 @@
         </div>
       </div>
 
-      <!--=========================================== mobileMenu ================================================-->
+      <!-- mobileMenu -->
       <div
         class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
         :class="{ 'opacity-100 pointer-events-auto': mobileMenu }">
@@ -161,9 +170,7 @@
               <span @click="triggerMobileNavItem('#certificates')"
                 class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Certificates</span>
             </li>
-
             <hr class="opacity-20" />
-
             <li class="py-2">
               <a target="_blank" href="assets/pdf/idris-chaalel-resume.pdf"
                 class="cursor-pointer pt-0.5 font-header font-bold uppercase text-yellow">Resume</a>
@@ -174,16 +181,18 @@
     </div>
   </header>
 
+
   <main id="main" class="relative">
-    <!-- ========================================= Home Section ============================================== -->
-    <div id="home" class="relative min-h-screen bg-primary bg-cover bg-center bg-no-repeat py-8 bg-blend-multiply"
+    <!-- Header Section -->
+    <header id="home" class="relative min-h-screen bg-primary bg-cover bg-center bg-no-repeat py-8 bg-blend-multiply"
       style="background-image: url(assets/img/bg-cta.jpg)">
 
-      <!-- gradient -->
+      <!-- Gradient -->
       <div class="absolute inset-0 z-20 bg-cover backdrop-blur-lg"></div>
 
-      <!-- profile container -->
-      <div id="profile" class="sm:pt-58 container relative z-30 px-0 pt-20 pb-12 sm:pb-48 lg:pt-60 lg:pb-48">
+      <!-- Profile Sub-Header -->
+      <header class="sm:pt-58 container relative z-30 px-0 pt-20 pb-12 sm:pb-48 lg:pt-60 lg:pb-48">
+
         <div class="flex flex-col items-center justify-center lg:flex-row">
           <div id="profile-pic"
             class="translate-y-18 rounded-full bg-gradient-to-tr from-primary to-yellow p-2 opacity-0 shadow-xl delay-75 duration-1000 ease-out">
@@ -230,16 +239,16 @@
             <div id="profile-button"
               class="flex translate-y-14 items-center justify-center pt-5 opacity-0 delay-1000 duration-1000 ease-out lg:justify-start">
               <a href="assets/pdf/idris-chaalel-resume.pdf" target="_blank"
-                class="cursor-pointer border-2 border-white bg-transparent py-2 px-10 text-lg font-semibold uppercase tracking-widest text-white transition duration-300 hover:border-transparent hover:bg-yellow hover:text-primary">preview
+                class="cursor-pointer border-2 border-white bg-transparent py-2 px-10 text-lg font-semibold uppercase tracking-widest text-white transition duration-300 hover:border-transparent hover:bg-yellow hover:text-primary">Preview
                 my resume</a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </header>
+    </header>
 
-    <!-- ========================================= About Section ============================================== -->
-    <div id="about" class="scroll-mt-8 bg-grey-50">
+    <!-- About Section -->
+    <section id="about" class="scroll-mt-8 bg-grey-50">
       <div class="container mx-auto flex flex-col items-center py-16 md:py-20 lg:w-11/12 lg:flex-row">
         <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
           <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
@@ -254,11 +263,9 @@
             of software development and design principles.
 
             My goal is to use my skills to help businesses and individuals achieve their objectives and make their mark
-            in the digital world. I specialize in Backend development (server-side languages such as Python, PHP, java,
+            in the digital world. I specialize in Backend development (server-side languages such as Python, PHP, Java,
             JavaScript, etc.), Database design and management, Technical problem-solving and debugging, and I'm always
             eager to take on new challenges and learn new skills.
-
-
           </p>
           <div class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
             <div class="flex items-center justify-center sm:justify-start">
@@ -394,14 +401,14 @@
               <div class="h-3 rounded-full bg-primary" style="width: 80%"></div>
             </div>
           </div>
-
-
+          <!-- More skills... -->
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- ========================================= Work Section ============================================== -->
-    <div id="work" class="container py-16 md:py-20">
+
+    <!-- Work Section -->
+    <section id="work" class="container py-16 md:py-20">
       <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
         My work experience
       </h2>
@@ -410,14 +417,52 @@
       </h3>
 
       <div class="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
-        <!-- devider -->
+        <!-- Divider -->
         <span class="absolute top-8 bottom-0 left-2/5 ml-10 hidden w-2 rounded-full bg-grey-40 md:block"></span>
 
-        <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
+        <!-- Fifth Work Experience (Tripnest) -->
+        <article class="mt-8 flex flex-col text-center md:flex-row md:text-left">
           <div class="md:w-2/5">
             <div class="flex justify-center md:justify-start">
               <span class="shrink-0">
-                <img src="assets/img/logo-cmsgu.svg" class="h-auto w-32" alt="company logo" />
+                <img src="assets/img/logos/logo-tripnest.png" class="h-auto w-32" alt="Company Logo" />
+              </span>
+              <div class="relative ml-3 hidden w-full rounded-full md:block">
+                <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
+              </div>
+              <div
+                class="absolute left-2/5 ml-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block">
+              </div>
+            </div>
+          </div>
+          <div class="md:w-3/5">
+            <div class="relative flex md:pl-18">
+              <div class="mt-1 flex">
+                <i class="bx bxs-right-arrow hidden text-2xl text-primary md:block"></i>
+                <div class="md:-mt-1 md:pl-8">
+                  <time class="block font-body font-bold text-grey-40" datetime="2023-01-01">Jan 2023 - Present</time>
+                  <h4 class="block pt-2 font-header text-xl font-bold uppercase text-primary">Full Stack Developer</h4>
+                  <div class="pt-2">
+                    <p class="block font-body text-black text-justify">Full stack developer of the <strong><a
+                          href="https://www.tripnest.me/"><i
+                            class="bx bx-link text-lg text-primary"></i>Tripnest</a></strong> project, a
+                      platform for real estate rental services. Tripnest is built using the latest modern web
+                      technologies including Next.js 13, Prisma ORM, MongoDB, and more. It provides features for
+                      property listing, search, booking, and payment integration.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- First Work Experience -->
+        <article class="mt-8 flex flex-col text-center md:flex-row md:text-left">
+          <div class="md:w-2/5">
+            <div class="flex justify-center md:justify-start">
+              <span class="shrink-0">
+                <img src="assets/img/logo-cmsgu.svg" class="h-auto w-32" alt="Company Logo" />
               </span>
 
               <div class="relative ml-3 hidden w-full rounded-full md:block">
@@ -435,34 +480,32 @@
               <div class="mt-1 flex">
                 <i class="bx bxs-right-arrow hidden w-8 text-2xl text-primary md:block"></i>
                 <div class="md:-mt-1 md:pl-8">
-                  <span class="block font-body font-bold text-grey-40">Apr 2020 - Sep 2020</span>
-                  <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Web Developer | Backend
-                    & Frontend</span>
+                  <time class="block font-body font-bold text-grey-40" datetime="2020-04-01">Apr 2020 - Sep 2020</time>
+                  <h4 class="block pt-2 font-header text-xl font-bold uppercase text-primary">Web Developer | Backend &
+                    Frontend</h4>
                   <div class="pt-2">
-                    <span class="block font-body text-justify text-black">Web developper of
+                    <p class="block font-body text-justify text-black">Web developer of
                       <strong><a target="_blank"
                           href="https://github.com/chaalelidris/educational-committee-management-system">“Educational
-                          committee management system - ECMS”</a>
-                      </strong>
-                      which is a project that involves the study, design and
-                      implementation of a platform for managing
-                      committees within the Guelma University departments. It enables effective administration
-                      and control of course leaders, while collecting and tracking educational activity
-                      progress from teachers and student delegates.
-                    </span>
+                          committee management system - ECMS”</a></strong>,
+                      a project that involves the study, design, and implementation of a platform for managing
+                      committees within the Guelma University departments. It enables effective administration and
+                      control of course leaders while collecting and tracking educational activity progress from
+                      teachers and student delegates.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </article>
 
-        <!-- SIHATE -->
-        <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
+        <!-- Second Work Experience (SIHATE) -->
+        <article class="mt-8 flex flex-col text-center md:flex-row md:text-left">
           <div class="md:w-2/5">
             <div class="flex justify-center md:justify-start">
               <span class="shrink-0">
-                <img src="assets/img/logo-sihate.svg" class="h-16 w-auto" alt="company logo" />
+                <img src="assets/img/logo-sihate.svg" class="h-16 w-auto" alt="Company Logo" />
               </span>
 
               <div class="relative ml-3 hidden w-full rounded-full md:block">
@@ -480,30 +523,30 @@
               <div class="mt-1 flex">
                 <i class="bx bxs-right-arrow hidden text-2xl text-primary md:block"></i>
                 <div class="md:-mt-1 md:pl-8">
-                  <span class="block font-body font-bold text-grey-40">Apr 2021 - September 2021</span>
-                  <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Project Manager & web
-                    developer</span>
+                  <time class="block font-body font-bold text-grey-40" datetime="2021-04-01">Apr 2021 - Sep 2021</time>
+                  <h4 class="block pt-2 font-header text-xl font-bold uppercase text-primary">Project Manager & Web
+                    Developer</h4>
                   <div class="pt-2">
-                    <span class="block font-body text-black text-justify">Project Manager and web developer of
+                    <p class="block font-body text-black text-justify">Project Manager and web developer of
                       <strong><a
-                          href="https://github.com/chaalelidris/SIHATE-HEALTHCARE-PROJECT-DJANGO.git">“Sihate”</a>
-                      </strong>
-                      which is a medical records management system that allows patients to make
-                      appointments and enables doctors to generate medical records and prescriptions.
-                      developed usign django python framework, Html5, Css3, Bootstrap 5 and
-                      javascript.</span>
+                          href="https://github.com/chaalelidris/SIHATE-HEALTHCARE-PROJECT-DJANGO.git">“Sihate”</a></strong>,
+                      a medical records management system that allows patients to make appointments and enables doctors
+                      to generate medical records and prescriptions. It was developed using Django Python framework,
+                      HTML5, CSS3, Bootstrap 5, and JavaScript.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
+        <!-- Third Work Experience -->
+        <article class="mt-8 flex flex-col text-center md:flex-row md:text-left">
           <div class="md:w-2/5">
             <div class="flex justify-center md:justify-start">
               <span class="shrink-0">
-                <img src="assets/img/logo-gr.svg" class="h-auto w-14" alt="company logo" />
+                <img src="assets/img/logo-gr.svg" class="h-auto w-14" alt="Company Logo" />
               </span>
               <div class="relative ml-3 hidden w-full rounded-full md:block">
                 <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
@@ -518,25 +561,25 @@
               <div class="mt-1 flex">
                 <i class="bx bxs-right-arrow hidden text-2xl text-primary md:block"></i>
                 <div class="md:-mt-1 md:pl-8">
-                  <span class="block font-body font-bold text-grey-40">May 2022 - jul 2022</span>
-                  <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Machine learning
-                    developer</span>
+                  <time class="block font-body font-bold text-grey-40" datetime="2022-05-01">May 2022 - Jul 2022</time>
+                  <h4 class="block pt-2 font-header text-xl font-bold uppercase text-primary">Machine Learning Developer
+                  </h4>
                   <div class="pt-2">
-                    <span class="block font-body text-black text-justify">Machine learning developer of “Dynamic hand
-                      gesture
-                      recognition” project using 2d & 3d CNN.</span>
+                    <p class="block font-body text-black text-justify">Machine learning developer of the "Dynamic Hand
+                      Gesture Recognition" project using 2D & 3D CNN.</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
+        <!-- Fourth Work Experience -->
+        <article class="mt-8 flex flex-col text-center md:flex-row md:text-left">
           <div class="md:w-2/5">
             <div class="flex justify-center md:justify-start">
               <span class="shrink-0">
-                <img src="assets/img/logo-newsize.svg" class="h-auto w-32" alt="company logo" />
+                <img src="assets/img/logo-newsize.svg" class="h-auto w-32" alt="Company Logo" />
               </span>
               <div class="relative ml-3 hidden w-full rounded-full md:block">
                 <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
@@ -546,56 +589,62 @@
               </div>
             </div>
           </div>
-
           <div class="md:w-3/5">
             <div class="relative flex md:pl-18">
               <div class="mt-1 flex">
                 <i class="bx bxs-right-arrow hidden text-2xl text-primary md:block"></i>
                 <div class="md:-mt-1 md:pl-8">
-                  <span class="block font-body font-bold text-grey-40">Aug 2022 - Present</span>
-                  <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Django web
-                    developer</span>
+                  <time class="block font-body font-bold text-grey-40" datetime="2022-08-01">Aug 2022 - Present</time>
+                  <h4 class="block pt-2 font-header text-xl font-bold uppercase text-primary">Django Web Developer</h4>
                   <div class="pt-2">
-                    <span class="block font-body text-black text-justify">Django web developer of
-                      <strong><a target="_blank" href="https://github.com/chaalelidris/newsizedz">“Newsize - Ecom
-                          website”</a>
-                      </strong>
-                      , ecommerce website built using Django framework. Newsize offers
-                      various features such as user authentication, product management, and stripe
-                      payment gateway.</span>
+                    <p class="block font-body text-black text-justify">Django web developer of <strong><a
+                          target="_blank" href="https://github.com/chaalelidris/newsizedz">“Newsize - Ecom
+                          Website”</a></strong>, an e-commerce website built using the Django framework. Newsize offers
+                      various features such as user authentication, product management, and Stripe payment gateway.</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </article>
       </div>
-    </div>
+    </section>
+    <!-- End Work Section -->
 
-    <!-- ========================================= Portfolio Section ========================================= -->
-    <div id="portfolio" class="container py-16 md:py-20">
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="container py-16 md:py-20">
       <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
         Check out my Portfolio
       </h2>
       <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-        Here's what I have done with the past
+        Here's what I have done in the past
       </h3>
       <p class="pt-6 text-center font-body text-sm font-medium text-gray-400 sm:text-2xl lg:text-3xl">
-        All projects details are on my
+        All project details are available on my
         <a target="_blank" href="https://github.com/chaalelidris" class="pl-4">
-          <i class="bx bxl-github text-4xl text-black hover:text-yellow"> GitHub</i>
+          <i class="bx bxl-github text-4xl text-black hover:text-yellow"></i> GitHub
         </a>
       </p>
 
+
       <div class="mx-auto grid w-full grid-cols-1 gap-6 pt-12 md:grid-cols-3 lg:grid-cols-4">
-        <div class="mx-auto transform transition-all hover:scale-105 md:mx-0 ">
+
+        <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+          <a target="_blank" href="https://www.tripnest.me">
+            <img src="assets/img/portfolio-tripnest.png" class="h-56 w-100 object-cover rounded-2xl shadow"
+              alt="portfolio image" />
+          </a>
+        </div>
+
+        <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
           <a target="_blank" href="https://chaalelidris.github.io/">
             <img src="assets/img/portfolio-idris-chaalel.png"
               class="h-56 w-100 object-cover overflow-hidden rounded-2xl shadow" alt="portfolio image" />
           </a>
         </div>
 
-        <div class="mx-auto transform transition-all hover:scale-105 md:mx-0 ">
+        <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
           <a target="_blank"
             href="https://www.figma.com/proto/YwLXHzmytLkwGt53ljS6mW/Mig-farm-project?page-id=0%3A1&node-id=6%3A6&viewport=468%2C149%2C0.21&scaling=min-zoom">
             <img src="assets/img/portfolio-migfarm-project.png"
@@ -609,12 +658,14 @@
               class="h-56 w-100 object-cover rounded-2xl shadow" alt="portfolio image" />
           </a>
         </div>
+
         <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
           <a target="_blank" href="https://github.com/chaalelidris/SIHATE-HEALTHCARE-PROJECT-DJANGO.git">
             <img src="assets/img/portfolio-sihate-healthcare.png" class="h-56 w-100 object-cover rounded-2xl shadow"
               alt="portfolio image" />
           </a>
         </div>
+
         <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
           <a target="_blank" href="https://github.com/chaalelidris/newsizedz.git">
             <img src="assets/img/logo-newsize.png" class="h-56 w-100 object-cover rounded-2xl shadow"
@@ -622,10 +673,11 @@
           </a>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- ========================================= Services Section ========================================== -->
-    <div id="services" class="container py-16 md:py-20">
+
+    <!-- Services Section -->
+    <section id="services" class="container py-16 md:py-20">
       <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
         Here's what I'm good at
       </h2>
@@ -637,12 +689,8 @@
         <div
           class="group cursor-pointer rounded-2xl px-8 py-12 shadow transition duration-300 ease-in-out hover:scale-105 hover:bg-primary">
           <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-            <div class="hidden group-hover:block">
-              <img src="assets/img/icon-development-white.svg" alt="development icon" />
-            </div>
-            <div class="block group-hover:hidden">
-              <img src="assets/img/icon-development-black.svg" alt="development icon" />
-            </div>
+            <img src="assets/img/icon-development-white.svg" alt="development icon" class="hidden group-hover:block" />
+            <img src="assets/img/icon-development-black.svg" alt="development icon" class="block group-hover:hidden" />
           </div>
           <div class="text-center">
             <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
@@ -657,12 +705,10 @@
         <div
           class="group cursor-pointer rounded-2xl px-8 py-12 shadow transition duration-300 ease-in-out hover:scale-105 hover:bg-primary">
           <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-            <div class="hidden group-hover:block">
-              <img src="assets/img/icon-mobile-white.svg" alt="Mobile Application icon" />
-            </div>
-            <div class="block group-hover:hidden">
-              <img src="assets/img/icon-mobile-black.svg" alt="Mobile Application icon" />
-            </div>
+            <img src="assets/img/icon-mobile-white.svg" alt="Mobile Application icon"
+              class="hidden group-hover:block" />
+            <img src="assets/img/icon-mobile-black.svg" alt="Mobile Application icon"
+              class="block group-hover:hidden" />
           </div>
           <div class="text-center">
             <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
@@ -677,12 +723,8 @@
         <div
           class="group cursor-pointer rounded-2xl px-8 py-12 shadow transition duration-300 ease-in-out hover:scale-105 hover:bg-primary">
           <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-            <div class="hidden group-hover:block">
-              <img src="assets/img/icon-design-white.svg" alt="Theme Design icon" />
-            </div>
-            <div class="block group-hover:hidden">
-              <img src="assets/img/icon-design-black.svg" alt="Theme Design icon" />
-            </div>
+            <img src="assets/img/icon-design-white.svg" alt="Theme Design icon" class="hidden group-hover:block" />
+            <img src="assets/img/icon-design-black.svg" alt="Theme Design icon" class="block group-hover:hidden" />
           </div>
           <div class="text-center">
             <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
@@ -697,12 +739,8 @@
         <div
           class="group cursor-pointer rounded-2xl px-8 py-12 shadow transition duration-300 ease-in-out hover:scale-105 hover:bg-primary">
           <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-            <div class="hidden group-hover:block">
-              <img src="assets/img/icon-graphics-white.svg" alt="Graphic Design icon" />
-            </div>
-            <div class="block group-hover:hidden">
-              <img src="assets/img/icon-graphics-black.svg" alt="Graphic Design icon" />
-            </div>
+            <img src="assets/img/icon-graphics-white.svg" alt="Graphic Design icon" class="hidden group-hover:block" />
+            <img src="assets/img/icon-graphics-black.svg" alt="Graphic Design icon" class="block group-hover:hidden" />
           </div>
           <div class="text-center">
             <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
@@ -714,10 +752,11 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- ========================================= Statistics Section ======================================== -->
-    <div id="statistics" class="mt-10 bg-cover bg-top bg-no-repeat pt-36 pb-12 lg:pt-52"
+
+    <!-- Statistics Section -->
+    <section id="statistics" class="mt-10 bg-cover bg-top bg-no-repeat pt-36 pb-12 lg:pt-52"
       style="background-image: url(assets/img/experience-figure.svg)">
       <div
         class="mx-auto w-11/12 rounded-2xl border border-gray-400 bg-white/5 py-16 shadow-2xl shadow-slate-900  lg:py-20 xl:py-24">
@@ -728,12 +767,8 @@
               <img src="assets/img/icon-project-white.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon project" />
             </div>
             <div class="pt-5 md:pl-5 md:pt-0">
-              <h1 class="font-body text-2xl font-bold text-yellow md:text-4xl">
-                5
-              </h1>
-              <h4 class="font-header text-base font-medium leading-loose text-grey-50 md:text-xl">
-                Finished Projects
-              </h4>
+              <h1 class="font-body text-2xl font-bold text-yellow md:text-4xl">5</h1>
+              <h4 class="font-header text-base font-medium leading-loose text-grey-50 md:text-xl">Finished Projects</h4>
             </div>
           </div>
 
@@ -743,49 +778,39 @@
               <img src="assets/img/icon-puzzle-white.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon puzzle" />
             </div>
             <div class="pt-5 md:pl-5 md:pt-0">
-              <h1 class="font-body text-2xl font-bold text-yellow md:text-4xl">
-                5
-              </h1>
-              <h4 class="font-header text-base font-medium leading-loose text-grey-50 md:text-xl">
-                Years Experience
-              </h4>
+              <h1 class="font-body text-2xl font-bold text-yellow md:text-4xl">5</h1>
+              <h4 class="font-header text-base font-medium leading-loose text-grey-50 md:text-xl">Years Experience</h4>
             </div>
           </div>
-
         </div>
       </div>
 
       <!-- Certificates -->
-      <div id="certificates" class="bg-transparent mx-auto w-5/6 mt-10">
-
-        <div class="images glide ">
+      <section id="certificates" class="bg-transparent mx-auto w-5/6 mt-10">
+        <div class="images glide">
           <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
               <li class="glide__slide"><img src="assets/img/certificates/IDRIS CHAALEL - Intro to Machine Learning.png"
-                  alt="">
-              </li>
+                  alt="Intro to Machine Learning Certificate"></li>
               <li class="glide__slide"><img src="assets/img/certificates/UC-6768e143-ded3-4063-8139-925c3647d050.jpg"
-                  alt="">
-              </li>
+                  alt="Certificate 1"></li>
               <li class="glide__slide"><img src="assets/img/certificates/UC-5d3f3617-e326-4be8-a76b-a070bc77ce26.jpg"
-                  alt="">
+                  alt="Certificate 2"></li>
+              <li class="glide__slide"><img src="assets/img/certificates/Coursera 7J5R6HWC9FRD.jpg" alt="Certificate 3">
               </li>
-              <li class="glide__slide"><img src="assets/img/certificates/Coursera 7J5R6HWC9FRD.jpg" alt="">
-              </li>
-              <li class="glide__slide"><img src="assets/img/certificates/Coursera-version-control-with-git.png" alt="">
-              </li>
+              <li class="glide__slide"><img src="assets/img/certificates/Coursera-version-control-with-git.png"
+                  alt="Certificate 4"></li>
               <li class="glide__slide"><img
-                  src="assets/img/certificates/Server-side Development with NodeJS, Express and MongoDB.jpeg" alt="">
-              </li>
-              <li class="glide__slide"><img
-                  src="assets/img/certificates/CERTIFICATE_Work_Smarter_Not_Harder.jpeg" alt="">
-              </li>
+                  src="assets/img/certificates/Server-side Development with NodeJS, Express and MongoDB.jpeg"
+                  alt="Certificate 5"></li>
+              <li class="glide__slide"><img src="assets/img/certificates/CERTIFICATE_Work_Smarter_Not_Harder.jpeg"
+                  alt="Certificate 6"></li>
             </ul>
           </div>
 
           <!-- Controls -->
           <div class="glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow left-2  bg-white text-gray-900 rounded-full" data-glide-dir="<">
+            <button class="glide__arrow left-2 bg-white text-gray-900 rounded-full" data-glide-dir="<">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -799,18 +824,18 @@
             </button>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
 
+    </section>
 
   </main>
 
-  <!-- ========================================= Contact & Footer Section =========================================== -->
+  <!-- Contact & Footer Section -->
   <footer>
     <div class="relative bg-primary bg-cover bg-center bg-no-repeat bg-blend-multiply"
       style="background-image: url(assets/img/bg-hero.jpg)">
-      <!-- ======= Contact Section ======= -->
-      <div id="contact" class="py-16 lg:py-24">
+      <!-- Contact Section -->
+      <section id="contact" class="py-16 lg:py-24">
         <h2 class="text-center font-header text-4xl font-semibold uppercase text-white sm:text-5xl lg:text-6xl">
           Here's a contact form
         </h2>
@@ -867,16 +892,15 @@
               <a href="mailto:i.chaalel@esi-sba.dz">i.chaalel@esi-sba.dz</a>
             </p>
           </div>
-
         </div>
-      </div>
+      </section>
 
       <hr class="mx-auto my-20 w-3/4" />
 
-      <!-- ======= Footer Section ======= -->
-      <div class="mx-auto flex w-3/4 flex-col justify-between md:flex-row pb-12">
+      <!-- Footer Section -->
+      <section class="mx-auto flex w-3/4 flex-col justify-between md:flex-row pb-12">
         <p class="text-center font-body text-white md:text-left">
-          © Copyright 2022. All right reserved, Idris CHAALEL.
+          © 2022. All rights reserved, Idris CHAALEL.
         </p>
         <div class="flex items-center justify-center pt-6 md:justify-start md:pt-0">
           <a target="_blank" href="https://www.facebook.com/idrischaalel/">
@@ -895,20 +919,19 @@
             <i class="bx bxl-instagram text-4xl text-white hover:text-yellow"></i>
           </a>
         </div>
-      </div>
+      </section>
     </div>
   </footer>
 
-  <script defer src="assets/js/dist/cdn.min.js"></script>
-  <script defer src="assets/js/cdn.min.js"></script>
-  <script src="assets/js/main.js"></script>
 
-  <!-- scripts for glide js-->
+  <script src="assets/js/dist/cdn.min.js" defer></script>
+  <script src="assets/js/cdn.min.js" defer></script>
+  <script src="assets/js/main.js"></script>
   <script src="assets/js/glide.min.js"></script>
 
   <script>
-    const config = {
-      type: 'carousel',
+    const glideConfig = {
+      type:"carousel",
       focusAt: '2',
       autoplay: 2500,
       perView: 2,
@@ -923,7 +946,7 @@
 
     };
 
-    new Glide('.glide', config).mount()
+    new Glide('.glide', glideConfig).mount()
   </script>
 
 </body>
