@@ -1,992 +1,1590 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Z4ZZF5Q6KZ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IDRIS CHAALEL</title>
-  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+      gtag("config", "G-Z4ZZF5Q6KZ");
+    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IDRIS CHAALEL</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
 
-  <!-- Open Graph metadata -->
-  <meta property="og:site_name" content="Idris Chaalel Portfolio">
-  <meta property="og:image" content="assets/img/social.jpg">
-  <meta property="og:title" content="IDRIS CHAALEL">
-  <meta property="og:locale" content="en_US">
+    <!-- Open Graph metadata -->
+    <meta property="og:site_name" content="Idris Chaalel Portfolio" />
+    <meta property="og:image" content="assets/img/social.jpg" />
+    <meta property="og:title" content="IDRIS CHAALEL" />
+    <meta property="og:locale" content="en_US" />
 
-  <!-- Page description -->
-  <meta name="description" content="Idris Chaalel, Systems Engineering Student">
+    <!-- Page description -->
+    <meta
+      name="description"
+      content="Idris Chaalel, Systems Engineering Student"
+    />
 
-  <!-- Theme color -->
-  <meta name="theme-color" content="#5540af">
+    <!-- Theme color -->
+    <meta name="theme-color" content="#5540af" />
 
-  <!-- Preconnect for external resources -->
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <!-- Preconnect for external resources -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
 
-  <!-- Font stylesheets -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+    <!-- Font stylesheets -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Boxicons stylesheet -->
-  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+    <!-- Boxicons stylesheet -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Required Core Stylesheet -->
-  <link rel="stylesheet" href="assets/styles/glide.core.min.css">
+    <!-- Required Core Stylesheet -->
+    <link rel="stylesheet" href="assets/styles/glide.core.min.css" />
 
-  <!-- Optional Theme Stylesheet -->
-  <link rel="stylesheet" href="assets/styles/glide.theme.min.css">
+    <!-- Optional Theme Stylesheet -->
+    <link rel="stylesheet" href="assets/styles/glide.theme.min.css" />
 
-  <!-- Tailwind CSS -->
-  <link rel="stylesheet" href="assets/styles/main.min.css" media="screen">
-</head>
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="assets/styles/main.min.css" media="screen" />
+  </head>
 
-<body x-data="{ mobileMenu: false }" class="relative" :class="{ 'overflow-hidden max-h-screen': mobileMenu }">
-  <!-- Header & Mobile menu -->
-  <header>
-    <div
-      x-data="{ triggerNavItem(id) {$scroll(id)},triggerMobileNavItem(id) {mobileMenu = false;this.triggerNavItem(id)}}">
-      <div id="header"
-        class="fixed top-4 left-4 right-4 z-50 mx-auto w-11/12 rounded-full bg-opacity-80 py-2  transition-all duration-500">
-        <div class="container flex items-center justify-between px-6 xl:px-16">
-          <div>
-            <span @click="triggerNavItem('#home')">
-              <img src="assets/img/logo_ic.svg" class="w-10 cursor-pointer lg:w-14" alt="logo ic" />
-            </span>
-          </div>
-
-          <nav class="hidden lg:block">
-            <ul class="flex items-center">
-              <li class="group pl-6">
-                <a @click="triggerNavItem('#home')"
-                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white transition-all hover:text-xl">
-                  Home
-                </a>
-              </li>
-
-              <li class="group pl-6">
-                <a @click="triggerNavItem('#about')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl">
-                  About</a>
-              </li>
-
-              <li class="group pl-6">
-                <a @click="triggerNavItem('#work')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl">
-                  Work</a>
-              </li>
-
-              <li class="group pl-6">
-                <a @click="triggerNavItem('#portfolio')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl">
-                  Portfolio
-                </a>
-              </li>
-
-              <li class="group pl-6">
-                <a @click="triggerNavItem('#services')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl">
-                  Services</a>
-              </li>
-
-              <li class="group pl-6">
-                <a @click="triggerNavItem('#statistics')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl">
-                  Statistics</a>
-              </li>
-
-              <li class="group pl-6">
-                <a @click="triggerNavItem('#contact')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl">
-                  Contact</a>
-              </li>
-
-              <li class="group pl-6">
-                <a @click="triggerNavItem('#certificates')"
-                  class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl">
-                  Certificates</a>
-              </li>
-
-            </ul>
-          </nav>
-
-          <div class="block lg:hidden">
-            <button @click="mobileMenu = true">
-              <i class="bx bx-menu text-4xl text-white"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- mobileMenu -->
+  <body
+    x-data="{ mobileMenu: false }"
+    class="relative"
+    :class="{ 'overflow-hidden max-h-screen': mobileMenu }"
+  >
+    <!-- Header & Mobile menu -->
+    <header>
       <div
-        class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
-        :class="{ 'opacity-100 pointer-events-auto': mobileMenu }">
-        <div class="sticky right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
-          <button class="absolute top-0 right-0 mt-4 mr-4" @click="mobileMenu = false">
-            <img src="assets/img/icon-close.svg" class="h-10 w-auto" alt="" />
-          </button>
+        x-data="{ triggerNavItem(id) {$scroll(id)},triggerMobileNavItem(id) {mobileMenu = false;this.triggerNavItem(id)}}"
+      >
+        <div
+          id="header"
+          class="fixed top-4 left-4 right-4 z-50 mx-auto w-11/12 rounded-full bg-opacity-80 py-2 transition-all duration-500"
+        >
+          <div
+            class="container flex items-center justify-between px-6 xl:px-16"
+          >
+            <div>
+              <span @click="triggerNavItem('#home')">
+                <img
+                  src="assets/img/logo_ic.svg"
+                  class="w-10 cursor-pointer lg:w-14"
+                  alt="logo ic"
+                />
+              </span>
+            </div>
 
-          <ul class="mt-8 flex flex-col">
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#home')"
-                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Home</span>
-            </li>
-            <hr class="opacity-20" />
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#about')"
-                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
-            </li>
-            <hr class="opacity-20" />
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#work')"
-                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Work</span>
-            </li>
-            <hr class="opacity-20" />
+            <nav class="hidden lg:block">
+              <ul class="flex items-center">
+                <li class="group pl-6">
+                  <a
+                    @click="triggerNavItem('#home')"
+                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white transition-all hover:text-xl"
+                  >
+                    Home
+                  </a>
+                </li>
 
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#portfolio')"
-                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Portfolio</span>
-            </li>
-            <hr class="opacity-20" />
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#services')"
-                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Services</span>
-            </li>
-            <hr class="opacity-20" />
+                <li class="group pl-6">
+                  <a
+                    @click="triggerNavItem('#about')"
+                    class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl"
+                  >
+                    About</a
+                  >
+                </li>
 
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#statistics')"
-                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Statistics</span>
-            </li>
-            <hr class="opacity-20" />
+                <li class="group pl-6">
+                  <a
+                    @click="triggerNavItem('#work')"
+                    class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl"
+                  >
+                    Work</a
+                  >
+                </li>
 
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#contact')"
-                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
-            </li>
-            <hr class="opacity-20" />
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#certificates')"
-                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Certificates</span>
-            </li>
-            <hr class="opacity-20" />
-            <li class="py-2">
-              <a target="_blank" href="assets/pdf/idris-chaalel-resume.pdf"
-                class="cursor-pointer pt-0.5 font-header font-bold uppercase text-yellow">Resume</a>
-            </li>
-          </ul>
+                <li class="group pl-6">
+                  <a
+                    @click="triggerNavItem('#portfolio')"
+                    class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl"
+                  >
+                    Portfolio
+                  </a>
+                </li>
+
+                <li class="group pl-6">
+                  <a
+                    @click="triggerNavItem('#services')"
+                    class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl"
+                  >
+                    Services</a
+                  >
+                </li>
+
+                <li class="group pl-6">
+                  <a
+                    @click="triggerNavItem('#statistics')"
+                    class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl"
+                  >
+                    Statistics</a
+                  >
+                </li>
+
+                <li class="group pl-6">
+                  <a
+                    @click="triggerNavItem('#contact')"
+                    class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl"
+                  >
+                    Contact</a
+                  >
+                </li>
+
+                <li class="group pl-6">
+                  <a
+                    @click="triggerNavItem('#certificates')"
+                    class="cursor-pointer pt-0.5 font-header font-medium uppercase text-white transition-all hover:text-xl"
+                  >
+                    Certificates</a
+                  >
+                </li>
+              </ul>
+            </nav>
+
+            <div class="block lg:hidden">
+              <button @click="mobileMenu = true">
+                <i class="bx bx-menu text-4xl text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- mobileMenu -->
+        <div
+          class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
+          :class="{ 'opacity-100 pointer-events-auto': mobileMenu }"
+        >
+          <div
+            class="sticky right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3"
+          >
+            <button
+              class="absolute top-0 right-0 mt-4 mr-4"
+              @click="mobileMenu = false"
+            >
+              <img src="assets/img/icon-close.svg" class="h-10 w-auto" alt="" />
+            </button>
+
+            <ul class="mt-8 flex flex-col">
+              <li class="py-2">
+                <span
+                  @click="triggerMobileNavItem('#home')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+                  >Home</span
+                >
+              </li>
+              <hr class="opacity-20" />
+              <li class="py-2">
+                <span
+                  @click="triggerMobileNavItem('#about')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+                  >About</span
+                >
+              </li>
+              <hr class="opacity-20" />
+              <li class="py-2">
+                <span
+                  @click="triggerMobileNavItem('#work')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+                  >Work</span
+                >
+              </li>
+              <hr class="opacity-20" />
+
+              <li class="py-2">
+                <span
+                  @click="triggerMobileNavItem('#portfolio')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+                  >Portfolio</span
+                >
+              </li>
+              <hr class="opacity-20" />
+              <li class="py-2">
+                <span
+                  @click="triggerMobileNavItem('#services')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+                  >Services</span
+                >
+              </li>
+              <hr class="opacity-20" />
+
+              <li class="py-2">
+                <span
+                  @click="triggerMobileNavItem('#statistics')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+                  >Statistics</span
+                >
+              </li>
+              <hr class="opacity-20" />
+
+              <li class="py-2">
+                <span
+                  @click="triggerMobileNavItem('#contact')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+                  >Contact</span
+                >
+              </li>
+              <hr class="opacity-20" />
+              <li class="py-2">
+                <span
+                  @click="triggerMobileNavItem('#certificates')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+                  >Certificates</span
+                >
+              </li>
+              <hr class="opacity-20" />
+              <li class="py-2">
+                <a
+                  target="_blank"
+                  href="assets/pdf/idris-chaalel-resume.pdf"
+                  class="cursor-pointer pt-0.5 font-header font-bold uppercase text-yellow"
+                  >Resume</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
-
-
-  <main id="main" class="relative">
-    <!-- Header Section -->
-    <header id="home" class="relative min-h-screen bg-primary bg-cover bg-center bg-no-repeat py-8 bg-blend-multiply"
-      style="background-image: url(assets/img/bg-cta.jpg)">
-
-      <!-- Gradient -->
-      <div class="absolute inset-0 z-20 bg-cover backdrop-blur-lg"></div>
-
-      <!-- Profile Sub-Header -->
-      <header class="sm:pt-58 container relative z-30 px-0 pt-20 pb-12 sm:pb-48 lg:pt-60 lg:pb-48">
-
-        <div class="flex flex-col items-center justify-center lg:flex-row">
-          <div id="profile-pic"
-            class="translate-y-18 rounded-full bg-gradient-to-tr from-primary to-yellow p-2 opacity-0 shadow-xl delay-75 duration-1000 ease-out">
-            <img src="assets/img/profile-author-1.png" class="h-44 rounded-full sm:h-56" alt="author" />
-          </div>
-
-          <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
-            <h1 id="profile-title"
-              class="translate-y-18 text-center font-header text-4xl font-extrabold uppercase text-white opacity-0 delay-300 duration-1000 ease-out md:text-6xl lg:text-7xl">
-              Idris Chaalel
-            </h1>
-            <h1 id="profile-subtitle"
-              class="mt-4 translate-y-14 text-center font-body text-xl uppercase text-white/80 opacity-0 delay-500 duration-1000 ease-out md:text-2xl lg:text-left">
-              Software Engineer.
-            </h1>
-            <div id="profile-connect"
-              class="flex translate-y-18 flex-col justify-center pt-3 opacity-0 delay-700 duration-1000 ease-out sm:flex-row sm:pt-5 lg:justify-start">
-              <div class="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
-                <p class="font-body text-lg uppercase text-white">
-                  Let's connect
-                </p>
-                <div class="hidden sm:block">
-                  <i class="bx bx-chevron-right text-3xl text-yellow"></i>
-                </div>
-              </div>
-              <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                <a target="_blank" href="https://www.facebook.com/idrischaalel/">
-                  <i class="bx bxl-facebook-square text-4xl text-white hover:text-yellow"></i>
-                </a>
-                <a target="_blank" href="https://twitter.com/chaalel_idris" class="pl-4">
-                  <i class="bx bxl-twitter text-4xl text-white hover:text-yellow"></i>
-                </a>
-                <a target="_blank" href="https://github.com/chaalelidris" class="pl-4">
-                  <i class="bx bxl-github text-4xl text-white hover:text-yellow"></i>
-                </a>
-                <a target="_blank" href="https://www.linkedin.com/in/chaalel-idris" class="pl-4">
-                  <i class="bx bxl-linkedin text-4xl text-white hover:text-yellow"></i>
-                </a>
-                <a target="_blank" href="https://www.instagram.com/idris_chaalel/" class="pl-4">
-                  <i class="bx bxl-instagram text-4xl text-white hover:text-yellow"></i>
-                </a>
-              </div>
-            </div>
-            <div id="profile-button"
-              class="flex translate-y-14 items-center justify-center pt-5 opacity-0 delay-1000 duration-1000 ease-out lg:justify-start">
-              <a href="assets/pdf/idris-chaalel-resume.pdf" target="_blank"
-                class="cursor-pointer border-2 border-white bg-transparent py-2 px-10 text-lg font-semibold uppercase tracking-widest text-white transition duration-300 hover:border-transparent hover:bg-yellow hover:text-primary">Preview
-                my resume</a>
-            </div>
-          </div>
-        </div>
-      </header>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="scroll-mt-8 bg-grey-50">
-      <div class="container mx-auto flex flex-col items-center py-16 md:py-20 lg:w-11/12 lg:flex-row">
-        <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
-          <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-            Who am I?
-          </h2>
-          <h4 class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-            I'm Idris Chaalel, Software Engineer | WEB3.0 enthusiast
-          </h4>
-          <p class="pt-6 text-justify font-body leading-relaxed text-grey-20">
-            Hi there! My name is Idris, and I'm a software engineer with a passion for creating innovative and practical
-            solutions to real-world problems. With my strong background in computer science, I have a deep understanding
-            of software development and design principles.
+    <main id="main" class="relative">
+      <!-- Header Section -->
+      <header
+        id="home"
+        class="relative min-h-screen bg-primary bg-cover bg-center bg-no-repeat py-8 bg-blend-multiply"
+        style="background-image: url(assets/img/bg-cta.jpg)"
+      >
+        <!-- Gradient -->
+        <div class="absolute inset-0 z-20 bg-cover backdrop-blur-lg"></div>
 
-            My goal is to use my skills to help businesses and individuals achieve their objectives and make their mark
-            in the digital world. I specialize in Backend development (server-side languages such as Python, PHP, Java,
-            JavaScript, etc.), Database design and management, Technical problem-solving and debugging, and I'm always
-            eager to take on new challenges and learn new skills.
-          </p>
-          <div class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
-            <div class="flex items-center justify-center sm:justify-start">
-              <p class="font-body text-lg font-semibold uppercase text-grey-20">
-                Connect with me
-              </p>
-              <div class="hidden sm:block">
-                <i class="bx bx-chevron-right text-2xl text-primary"></i>
-              </div>
+        <!-- Profile Sub-Header -->
+        <header
+          class="sm:pt-58 container relative z-30 px-0 pt-20 pb-12 sm:pb-48 lg:pt-60 lg:pb-48"
+        >
+          <div class="flex flex-col items-center justify-center lg:flex-row">
+            <div
+              id="profile-pic"
+              class="translate-y-18 rounded-full bg-gradient-to-tr from-primary to-yellow p-2 opacity-0 shadow-xl delay-75 duration-1000 ease-out"
+            >
+              <img
+                src="assets/img/profile-author-1.png"
+                class="h-44 rounded-full sm:h-56"
+                alt="author"
+              />
             </div>
-            <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-              <a target="_blank" href="https://www.facebook.com/idrischaalel/">
-                <i class="bx bxl-facebook-square text-4xl text-primary hover:text-yellow"></i>
-              </a>
-              <a target="_blank" href="https://twitter.com/chaalel_idris" class="pl-4">
-                <i class="bx bxl-twitter text-4xl text-primary hover:text-yellow"></i>
-              </a>
-              <a target="_blank" href="https://github.com/chaalelidris" class="pl-4">
-                <i class="bx bxl-github text-4xl text-primary hover:text-yellow"></i>
-              </a>
-              <a target="_blank" href="https://www.linkedin.com/in/chaalel-idris" class="pl-4">
-                <i class="bx bxl-linkedin text-4xl text-primary hover:text-yellow"></i>
-              </a>
-              <a target="_blank" href="https://www.instagram.com/idris_chaalel/" class="pl-4">
-                <i class="bx bxl-instagram text-4xl text-primary hover:text-yellow"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
-          <div>
-            <div class="flex items-end justify-between">
-              <h4 class="font-body font-semibold uppercase text-black">
-                HTML & CSS
-              </h4>
-              <h3 class="font-body text-3xl font-bold text-primary">85%</h3>
-            </div>
-            <div class="mt-2 h-3 w-full rounded-full bg-lila">
-              <div class="h-3 rounded-full bg-primary" style="width: 85%"></div>
-            </div>
-          </div>
 
-          <div class="pt-6">
-            <div class="flex items-end justify-between">
-              <h4 class="font-body font-semibold uppercase text-black">
-                Javascript
-              </h4>
-              <h3 class="font-body text-3xl font-bold text-primary">70%</h3>
-            </div>
-            <div class="mt-2 h-3 w-full rounded-full bg-lila">
-              <div class="h-3 rounded-full bg-primary" style="width: 70%"></div>
-            </div>
-          </div>
-
-          <div class="pt-6">
-            <div class="flex items-end justify-between">
-              <h4 class="font-body font-semibold uppercase text-black">
-                tailwindcss
-              </h4>
-              <h3 class="font-body text-3xl font-bold text-primary">80%</h3>
-            </div>
-            <div class="mt-2 h-3 w-full rounded-full bg-lila">
-              <div class="h-3 rounded-full bg-primary" style="width: 80%"></div>
-            </div>
-          </div>
-          <div class="pt-6">
-            <div class="flex items-end justify-between">
-              <h4 class="font-body font-semibold uppercase text-black">
-                php
-              </h4>
-              <h3 class="font-body text-3xl font-bold text-primary">80%</h3>
-            </div>
-            <div class="mt-2 h-3 w-full rounded-full bg-lila">
-              <div class="h-3 rounded-full bg-primary" style="width: 80%"></div>
-            </div>
-          </div>
-          <div class="pt-6">
-            <div class="flex items-end justify-between">
-              <h4 class="font-body font-semibold uppercase text-black">
-                Python
-              </h4>
-              <h3 class="font-body text-3xl font-bold text-primary">70%</h3>
-            </div>
-            <div class="mt-2 h-3 w-full rounded-full bg-lila">
-              <div class="h-3 rounded-full bg-primary" style="width: 70%"></div>
-            </div>
-          </div>
-
-          <div class="pt-6">
-            <div class="flex items-end justify-between">
-              <h4 class="font-body font-semibold uppercase text-black">
-                Django
-              </h4>
-              <h3 class="font-body text-3xl font-bold text-primary">80%</h3>
-            </div>
-            <div class="mt-2 h-3 w-full rounded-full bg-lila">
-              <div class="h-3 rounded-full bg-primary" style="width: 80%"></div>
-            </div>
-          </div>
-
-          <div class="pt-6">
-            <div class="flex items-end justify-between">
-              <h4 class="font-body font-semibold uppercase text-black">
-                Express Js
-              </h4>
-              <h3 class="font-body text-3xl font-bold text-primary">70%</h3>
-            </div>
-            <div class="mt-2 h-3 w-full rounded-full bg-lila">
-              <div class="h-3 rounded-full bg-primary" style="width: 70%"></div>
-            </div>
-          </div>
-
-          <div class="pt-6">
-            <div class="flex items-end justify-between">
-              <h4 class="font-body font-semibold uppercase text-black">
-                MongoDB & Mongoose
-              </h4>
-              <h3 class="font-body text-3xl font-bold text-primary">70%</h3>
-            </div>
-            <div class="mt-2 h-3 w-full rounded-full bg-lila">
-              <div class="h-3 rounded-full bg-primary" style="width: 70%"></div>
-            </div>
-          </div>
-
-          <div class="pt-6">
-            <div class="flex items-end justify-between">
-              <h4 class="font-body font-semibold uppercase text-black">
-                SQL & MySQL
-              </h4>
-              <h3 class="font-body text-3xl font-bold text-primary">80%</h3>
-            </div>
-            <div class="mt-2 h-3 w-full rounded-full bg-lila">
-              <div class="h-3 rounded-full bg-primary" style="width: 80%"></div>
-            </div>
-          </div>
-          <!-- More skills... -->
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Work Section -->
-    <section id="work" class="container py-16 md:py-20">
-      <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-        My work experience
-      </h2>
-      <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-        Here's what I did before
-      </h3>
-
-      <div class="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
-        <!-- Divider -->
-        <span class="absolute top-8 bottom-0 left-2/5 ml-10 hidden w-2 rounded-full bg-grey-40 md:block"></span>
-
-        <!-- Fifth Work Experience (Tripnest) -->
-        <article class="mt-8 flex flex-col text-center md:flex-row md:text-left">
-          <div class="md:w-2/5">
-            <div class="flex justify-center md:justify-start">
-              <span class="shrink-0">
-                <img src="assets/img/logos/logo-tripnest.png" class="h-auto w-32" alt="Company Logo" />
-              </span>
-              <div class="relative ml-3 hidden w-full rounded-full md:block">
-                <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
-              </div>
+            <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
+              <h1
+                id="profile-title"
+                class="translate-y-18 text-center font-header text-4xl font-extrabold uppercase text-white opacity-0 delay-300 duration-1000 ease-out md:text-6xl lg:text-7xl"
+              >
+                Idris Chaalel
+              </h1>
+              <h1
+                id="profile-subtitle"
+                class="mt-4 translate-y-14 text-center font-body text-xl uppercase text-white/80 opacity-0 delay-500 duration-1000 ease-out md:text-2xl lg:text-left"
+              >
+                Software Engineer.
+              </h1>
               <div
-                class="absolute left-2/5 ml-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block">
-              </div>
-            </div>
-          </div>
-          <div class="md:w-3/5">
-            <div class="relative flex md:pl-18">
-              <div class="mt-1 flex">
-                <i class="bx bxs-right-arrow hidden text-2xl text-primary md:block"></i>
-                <div class="md:-mt-1 md:pl-8">
-                  <time class="block font-body font-bold text-grey-40" datetime="2023-01-01">Jan 2023 - Present</time>
-                  <h4 class="block pt-2 font-header text-xl font-bold uppercase text-primary">Full Stack Developer</h4>
-                  <div class="pt-2">
-                    <p class="block font-body text-black text-justify">Full stack developer of the <strong><a
-                          href="https://www.tripnest.me/"><i
-                            class="bx bx-link text-lg text-primary"></i>Tripnest</a></strong> project, a
-                      platform for real estate rental services. Tripnest is built using the latest modern web
-                      technologies including Next.js 13, Prisma ORM, MongoDB, and more. It provides features for
-                      property listing, search, booking, and payment integration.</p>
+                id="profile-connect"
+                class="flex translate-y-18 flex-col justify-center pt-3 opacity-0 delay-700 duration-1000 ease-out sm:flex-row sm:pt-5 lg:justify-start"
+              >
+                <div
+                  class="flex items-center justify-center pl-0 sm:justify-start md:pl-1"
+                >
+                  <p class="font-body text-lg uppercase text-white">
+                    Let's connect
+                  </p>
+                  <div class="hidden sm:block">
+                    <i class="bx bx-chevron-right text-3xl text-yellow"></i>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- First Work Experience -->
-        <article class="mt-8 flex flex-col text-center md:flex-row md:text-left">
-          <div class="md:w-2/5">
-            <div class="flex justify-center md:justify-start">
-              <span class="shrink-0">
-                <img src="assets/img/logo-cmsgu.svg" class="h-auto w-32" alt="Company Logo" />
-              </span>
-
-              <div class="relative ml-3 hidden w-full rounded-full md:block">
-                <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
-              </div>
-
-              <div
-                class="absolute left-2/5 ml-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block">
-              </div>
-            </div>
-          </div>
-
-          <div class="md:w-3/5">
-            <div class="relative flex md:pl-18">
-              <div class="mt-1 flex">
-                <i class="bx bxs-right-arrow hidden w-8 text-2xl text-primary md:block"></i>
-                <div class="md:-mt-1 md:pl-8">
-                  <time class="block font-body font-bold text-grey-40" datetime="2020-04-01">Apr 2020 - Sep 2020</time>
-                  <h4 class="block pt-2 font-header text-xl font-bold uppercase text-primary">Web Developer | Backend &
-                    Frontend</h4>
-                  <div class="pt-2">
-                    <p class="block font-body text-justify text-black">Web developer of
-                      <strong><a target="_blank"
-                          href="https://github.com/chaalelidris/educational-committee-management-system">“Educational
-                          committee management system - ECMS”</a></strong>,
-                      a project that involves the study, design, and implementation of a platform for managing
-                      committees within the Guelma University departments. It enables effective administration and
-                      control of course leaders while collecting and tracking educational activity progress from
-                      teachers and student delegates.
-                    </p>
-                  </div>
+                <div
+                  class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0"
+                >
+                  <a
+                    target="_blank"
+                    href="https://www.facebook.com/idrischaalel/"
+                  >
+                    <i
+                      class="bx bxl-facebook-square text-4xl text-white hover:text-yellow"
+                    ></i>
+                  </a>
+                  <a
+                    target="_blank"
+                    href="https://twitter.com/chaalel_idris"
+                    class="pl-4"
+                  >
+                    <i
+                      class="bx bxl-twitter text-4xl text-white hover:text-yellow"
+                    ></i>
+                  </a>
+                  <a
+                    target="_blank"
+                    href="https://github.com/chaalelidris"
+                    class="pl-4"
+                  >
+                    <i
+                      class="bx bxl-github text-4xl text-white hover:text-yellow"
+                    ></i>
+                  </a>
+                  <a
+                    target="_blank"
+                    href="https://www.linkedin.com/in/chaalel-idris"
+                    class="pl-4"
+                  >
+                    <i
+                      class="bx bxl-linkedin text-4xl text-white hover:text-yellow"
+                    ></i>
+                  </a>
+                  <a
+                    target="_blank"
+                    href="https://www.instagram.com/idris_chaalel/"
+                    class="pl-4"
+                  >
+                    <i
+                      class="bx bxl-instagram text-4xl text-white hover:text-yellow"
+                    ></i>
+                  </a>
                 </div>
               </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Second Work Experience (SIHATE) -->
-        <article class="mt-8 flex flex-col text-center md:flex-row md:text-left">
-          <div class="md:w-2/5">
-            <div class="flex justify-center md:justify-start">
-              <span class="shrink-0">
-                <img src="assets/img/logo-sihate.svg" class="h-16 w-auto" alt="Company Logo" />
-              </span>
-
-              <div class="relative ml-3 hidden w-full rounded-full md:block">
-                <div class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></div>
-              </div>
-
               <div
-                class="absolute left-2/5 ml-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block">
+                id="profile-button"
+                class="flex translate-y-14 items-center justify-center pt-5 opacity-0 delay-1000 duration-1000 ease-out lg:justify-start"
+              >
+                <a
+                  href="assets/pdf/idris-chaalel-resume.pdf"
+                  target="_blank"
+                  class="cursor-pointer border-2 border-white bg-transparent py-2 px-10 text-lg font-semibold uppercase tracking-widest text-white transition duration-300 hover:border-transparent hover:bg-yellow hover:text-primary"
+                  >Preview my resume</a
+                >
               </div>
             </div>
           </div>
+        </header>
+      </header>
 
-          <div class="md:w-3/5">
-            <div class="relative flex md:pl-18">
-              <div class="mt-1 flex">
-                <i class="bx bxs-right-arrow hidden text-2xl text-primary md:block"></i>
-                <div class="md:-mt-1 md:pl-8">
-                  <time class="block font-body font-bold text-grey-40" datetime="2021-04-01">Apr 2021 - Sep 2021</time>
-                  <h4 class="block pt-2 font-header text-xl font-bold uppercase text-primary">Project Manager & Web
-                    Developer</h4>
-                  <div class="pt-2">
-                    <p class="block font-body text-black text-justify">Project Manager and web developer of
-                      <strong><a
-                          href="https://github.com/chaalelidris/SIHATE-HEALTHCARE-PROJECT-DJANGO.git">“Sihate”</a></strong>,
-                      a medical records management system that allows patients to make appointments and enables doctors
-                      to generate medical records and prescriptions. It was developed using Django Python framework,
-                      HTML5, CSS3, Bootstrap 5, and JavaScript.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Third Work Experience -->
-        <article class="mt-8 flex flex-col text-center md:flex-row md:text-left">
-          <div class="md:w-2/5">
-            <div class="flex justify-center md:justify-start">
-              <span class="shrink-0">
-                <img src="assets/img/logo-gr.svg" class="h-auto w-14" alt="Company Logo" />
-              </span>
-              <div class="relative ml-3 hidden w-full rounded-full md:block">
-                <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
-              </div>
-              <div
-                class="absolute left-2/5 ml-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block">
-              </div>
-            </div>
-          </div>
-          <div class="md:w-3/5">
-            <div class="relative flex md:pl-18">
-              <div class="mt-1 flex">
-                <i class="bx bxs-right-arrow hidden text-2xl text-primary md:block"></i>
-                <div class="md:-mt-1 md:pl-8">
-                  <time class="block font-body font-bold text-grey-40" datetime="2022-05-01">May 2022 - Jul 2022</time>
-                  <h4 class="block pt-2 font-header text-xl font-bold uppercase text-primary">Machine Learning Developer
-                  </h4>
-                  <div class="pt-2">
-                    <p class="block font-body text-black text-justify">Machine learning developer of the "Dynamic Hand
-                      Gesture Recognition" project using 2D & 3D CNN.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Fourth Work Experience -->
-        <article class="mt-8 flex flex-col text-center md:flex-row md:text-left">
-          <div class="md:w-2/5">
-            <div class="flex justify-center md:justify-start">
-              <span class="shrink-0">
-                <img src="assets/img/logo-newsize.svg" class="h-auto w-32" alt="Company Logo" />
-              </span>
-              <div class="relative ml-3 hidden w-full rounded-full md:block">
-                <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
-              </div>
-              <div
-                class="absolute left-2/5 ml-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block">
-              </div>
-            </div>
-          </div>
-          <div class="md:w-3/5">
-            <div class="relative flex md:pl-18">
-              <div class="mt-1 flex">
-                <i class="bx bxs-right-arrow hidden text-2xl text-primary md:block"></i>
-                <div class="md:-mt-1 md:pl-8">
-                  <time class="block font-body font-bold text-grey-40" datetime="2022-08-01">Aug 2022 - Present</time>
-                  <h4 class="block pt-2 font-header text-xl font-bold uppercase text-primary">Django Web Developer</h4>
-                  <div class="pt-2">
-                    <p class="block font-body text-black text-justify">Django web developer of <strong><a
-                          target="_blank" href="https://github.com/chaalelidris/newsizedz">“Newsize - Ecom
-                          Website”</a></strong>, an e-commerce website built using the Django framework. Newsize offers
-                      various features such as user authentication, product management, and Stripe payment gateway.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-    <!-- End Work Section -->
-
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="container py-16 md:py-20">
-      <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-        Check out my Portfolio
-      </h2>
-      <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-        Here's what I have done in the past
-      </h3>
-      <p class="pt-6 text-center font-body text-sm font-medium text-gray-400 sm:text-2xl lg:text-3xl">
-        All project details are available on my
-        <a target="_blank" href="https://github.com/chaalelidris" class="pl-4">
-          <i class="bx bxl-github text-4xl text-black hover:text-yellow"></i> GitHub
-        </a>
-      </p>
-
-
-      <div class="mx-auto grid w-full grid-cols-1 gap-6 pt-12 md:grid-cols-3 lg:grid-cols-4">
-
-        <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-          <a target="_blank" href="https://www.tripnest.me">
-            <img src="assets/img/portfolio-tripnest.png" class="h-56 w-100 object-cover rounded-2xl shadow"
-              alt="portfolio image" />
-          </a>
-        </div>
-
-        <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-          <a target="_blank" href="https://chaalelidris.github.io/">
-            <img src="assets/img/portfolio-idris-chaalel.png"
-              class="h-56 w-100 object-cover overflow-hidden rounded-2xl shadow" alt="portfolio image" />
-          </a>
-        </div>
-
-        <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-          <a target="_blank"
-            href="https://www.figma.com/proto/YwLXHzmytLkwGt53ljS6mW/Mig-farm-project?page-id=0%3A1&node-id=6%3A6&viewport=468%2C149%2C0.21&scaling=min-zoom">
-            <img src="assets/img/portfolio-migfarm-project.png"
-              class="h-56 w-100 object-cover overflow-hidden rounded-2xl shadow" alt="portfolio image" />
-          </a>
-        </div>
-
-        <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-          <a target="_blank" href="https://github.com/chaalelidris/educational-committee-management-system.git">
-            <img src="assets/img/portfolio-comite-managment-system.png"
-              class="h-56 w-100 object-cover rounded-2xl shadow" alt="portfolio image" />
-          </a>
-        </div>
-
-        <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-          <a target="_blank" href="https://github.com/chaalelidris/SIHATE-HEALTHCARE-PROJECT-DJANGO.git">
-            <img src="assets/img/portfolio-sihate-healthcare.png" class="h-56 w-100 object-cover rounded-2xl shadow"
-              alt="portfolio image" />
-          </a>
-        </div>
-
-        <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-          <a target="_blank" href="https://github.com/chaalelidris/newsizedz.git">
-            <img src="assets/img/logo-newsize.png" class="h-56 w-100 object-cover rounded-2xl shadow"
-              alt="portfolio image" />
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Review -->
-    <section id="review" class="container py-16 md:py-20">
-      <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-        Client Review
-      </h2>
-      <section class="relative isolate overflow-hidden bg-white px-6 lg:px-8">
+      <!-- About Section -->
+      <section id="about" class="scroll-mt-8 bg-grey-50">
         <div
-          class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20">
-        </div>
-        <div
-          class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center">
-        </div>
-        <div class="mx-auto max-w-2xl lg:max-w-4xl">
-          <figure class="mt-10">
-            <blockquote class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-              <p>“The code is very clean, the work is beautiful, delivered before the deadline, I recommend dealing with idris”</p>
-            </blockquote>
-            <figcaption class="mt-10">
-              <img class="mx-auto h-10 w-10 rounded-full"
-                src="https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png"
-                alt="">
-              <div class="mt-4 flex items-center justify-center space-x-3 text-base">
-                <div class="font-semibold text-gray-900">Ali Khalid</div>
-                <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" class="fill-gray-900">
-                  <circle cx="1" cy="1" r="1" />
-                </svg>
-              </div>
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-      <div class="mx-auto text-center flex justify-center mt-10">
-        <a href="https://mostaql.com/u/chaalel_idris24/reviews/5230882" target="_blank">
-          <img src="assets/img/Reviews/review-1.png" alt="development icon" class="rounded-3xl cursor-pointer" />
-        </a>
-      </div>
-    </section>
-
-
-    <!-- Services Section -->
-    <section id="services" class="container py-16 md:py-20">
-      <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-        Here's what I'm good at
-      </h2>
-      <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-        These are the services I offer
-      </h3>
-
-      <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3">
-        <div
-          class="group cursor-pointer rounded-2xl px-8 py-12 shadow transition duration-300 ease-in-out hover:scale-105 hover:bg-primary">
-          <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-            <img src="assets/img/icon-development-white.svg" alt="development icon" class="hidden group-hover:block" />
-            <img src="assets/img/icon-development-black.svg" alt="development icon" class="block group-hover:hidden" />
-          </div>
-          <div class="text-center">
-            <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-              WEB DEVELOPMENT
-            </h3>
-            <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-              <!-- todo -->
+          class="container mx-auto flex flex-col items-center py-16 md:py-20 lg:w-11/12 lg:flex-row"
+        >
+          <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
+            <h2
+              class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl"
+            >
+              Who am I?
+            </h2>
+            <h4
+              class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
+            >
+              I'm Idris Chaalel, Software Engineer | WEB3.0 enthusiast
+            </h4>
+            <p class="pt-6 text-justify font-body leading-relaxed text-grey-20">
+              Hi there! My name is Idris, and I'm a software engineer with a
+              passion for creating innovative and practical solutions to
+              real-world problems. With my strong background in computer
+              science, I have a deep understanding of software development and
+              design principles. My goal is to use my skills to help businesses
+              and individuals achieve their objectives and make their mark in
+              the digital world. I specialize in Backend development
+              (server-side languages such as Python, PHP, Java, JavaScript,
+              etc.), Database design and management, Technical problem-solving
+              and debugging, and I'm always eager to take on new challenges and
+              learn new skills.
             </p>
+            <div
+              class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start"
+            >
+              <div class="flex items-center justify-center sm:justify-start">
+                <p
+                  class="font-body text-lg font-semibold uppercase text-grey-20"
+                >
+                  Connect with me
+                </p>
+                <div class="hidden sm:block">
+                  <i class="bx bx-chevron-right text-2xl text-primary"></i>
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0"
+              >
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/idrischaalel/"
+                >
+                  <i
+                    class="bx bxl-facebook-square text-4xl text-primary hover:text-yellow"
+                  ></i>
+                </a>
+                <a
+                  target="_blank"
+                  href="https://twitter.com/chaalel_idris"
+                  class="pl-4"
+                >
+                  <i
+                    class="bx bxl-twitter text-4xl text-primary hover:text-yellow"
+                  ></i>
+                </a>
+                <a
+                  target="_blank"
+                  href="https://github.com/chaalelidris"
+                  class="pl-4"
+                >
+                  <i
+                    class="bx bxl-github text-4xl text-primary hover:text-yellow"
+                  ></i>
+                </a>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/chaalel-idris"
+                  class="pl-4"
+                >
+                  <i
+                    class="bx bxl-linkedin text-4xl text-primary hover:text-yellow"
+                  ></i>
+                </a>
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/idris_chaalel/"
+                  class="pl-4"
+                >
+                  <i
+                    class="bx bxl-instagram text-4xl text-primary hover:text-yellow"
+                  ></i>
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div
-          class="group cursor-pointer rounded-2xl px-8 py-12 shadow transition duration-300 ease-in-out hover:scale-105 hover:bg-primary">
-          <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-            <img src="assets/img/icon-mobile-white.svg" alt="Mobile Application icon"
-              class="hidden group-hover:block" />
-            <img src="assets/img/icon-mobile-black.svg" alt="Mobile Application icon"
-              class="block group-hover:hidden" />
-          </div>
-          <div class="text-center">
-            <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-              Mobile Development
-            </h3>
-            <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-              <!-- todo -->
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="group cursor-pointer rounded-2xl px-8 py-12 shadow transition duration-300 ease-in-out hover:scale-105 hover:bg-primary">
-          <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-            <img src="assets/img/icon-design-white.svg" alt="Theme Design icon" class="hidden group-hover:block" />
-            <img src="assets/img/icon-design-black.svg" alt="Theme Design icon" class="block group-hover:hidden" />
-          </div>
-          <div class="text-center">
-            <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-              Graphic Design
-            </h3>
-            <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-              <!-- todo -->
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="group cursor-pointer rounded-2xl px-8 py-12 shadow transition duration-300 ease-in-out hover:scale-105 hover:bg-primary">
-          <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-            <img src="assets/img/icon-graphics-white.svg" alt="Graphic Design icon" class="hidden group-hover:block" />
-            <img src="assets/img/icon-graphics-black.svg" alt="Graphic Design icon" class="block group-hover:hidden" />
-          </div>
-          <div class="text-center">
-            <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-              Web Design
-            </h3>
-            <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-              <!-- todo -->
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Statistics Section -->
-    <section id="statistics" class="mt-10 bg-cover bg-top bg-no-repeat pt-36 pb-12 lg:pt-52"
-      style="background-image: url(assets/img/experience-figure.svg)">
-      <div
-        class="mx-auto w-11/12 rounded-2xl border border-gray-400 bg-white/5 py-16 shadow-2xl shadow-slate-900  lg:py-20 xl:py-24">
-        <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-8">
-          <div
-            class="flex flex-col items-center justify-center border-r border-gray-400 text-center md:flex-row md:text-left">
+          <div class="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
             <div>
-              <img src="assets/img/icon-project-white.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon project" />
+              <div class="flex items-end justify-between">
+                <h4 class="font-body font-semibold uppercase text-black">
+                  HTML & CSS
+                </h4>
+                <h3 class="font-body text-3xl font-bold text-primary">85%</h3>
+              </div>
+              <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                <div
+                  class="h-3 rounded-full bg-primary"
+                  style="width: 85%"
+                ></div>
+              </div>
             </div>
-            <div class="pt-5 md:pl-5 md:pt-0">
-              <h1 class="font-body text-2xl font-bold text-yellow md:text-4xl">5</h1>
-              <h4 class="font-header text-base font-medium leading-loose text-grey-50 md:text-xl">Finished Projects</h4>
-            </div>
-          </div>
 
-          <div
-            class="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-left lg:mt-0">
-            <div>
-              <img src="assets/img/icon-puzzle-white.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon puzzle" />
+            <div class="pt-6">
+              <div class="flex items-end justify-between">
+                <h4 class="font-body font-semibold uppercase text-black">
+                  Javascript
+                </h4>
+                <h3 class="font-body text-3xl font-bold text-primary">70%</h3>
+              </div>
+              <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                <div
+                  class="h-3 rounded-full bg-primary"
+                  style="width: 70%"
+                ></div>
+              </div>
             </div>
-            <div class="pt-5 md:pl-5 md:pt-0">
-              <h1 class="font-body text-2xl font-bold text-yellow md:text-4xl">5</h1>
-              <h4 class="font-header text-base font-medium leading-loose text-grey-50 md:text-xl">Years Experience</h4>
+
+            <div class="pt-6">
+              <div class="flex items-end justify-between">
+                <h4 class="font-body font-semibold uppercase text-black">
+                  tailwindcss
+                </h4>
+                <h3 class="font-body text-3xl font-bold text-primary">80%</h3>
+              </div>
+              <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                <div
+                  class="h-3 rounded-full bg-primary"
+                  style="width: 80%"
+                ></div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
+            <div class="pt-6">
+              <div class="flex items-end justify-between">
+                <h4 class="font-body font-semibold uppercase text-black">
+                  php
+                </h4>
+                <h3 class="font-body text-3xl font-bold text-primary">80%</h3>
+              </div>
+              <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                <div
+                  class="h-3 rounded-full bg-primary"
+                  style="width: 80%"
+                ></div>
+              </div>
+            </div>
+            <div class="pt-6">
+              <div class="flex items-end justify-between">
+                <h4 class="font-body font-semibold uppercase text-black">
+                  Python
+                </h4>
+                <h3 class="font-body text-3xl font-bold text-primary">70%</h3>
+              </div>
+              <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                <div
+                  class="h-3 rounded-full bg-primary"
+                  style="width: 70%"
+                ></div>
+              </div>
+            </div>
 
-      <!-- Certificates -->
-      <section id="certificates" class="bg-transparent mx-auto w-5/6 mt-10">
-        <div class="images glide">
-          <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-              <li class="glide__slide"><img src="assets/img/certificates/IDRIS CHAALEL - Intro to Machine Learning.png"
-                  alt="Intro to Machine Learning Certificate"></li>
-              <li class="glide__slide"><img src="assets/img/certificates/UC-6768e143-ded3-4063-8139-925c3647d050.jpg"
-                  alt="Certificate 1"></li>
-              <li class="glide__slide"><img src="assets/img/certificates/UC-5d3f3617-e326-4be8-a76b-a070bc77ce26.jpg"
-                  alt="Certificate 2"></li>
-              <li class="glide__slide"><img src="assets/img/certificates/Coursera 7J5R6HWC9FRD.jpg" alt="Certificate 3">
-              </li>
-              <li class="glide__slide"><img src="assets/img/certificates/Coursera-version-control-with-git.png"
-                  alt="Certificate 4"></li>
-              <li class="glide__slide"><img
-                  src="assets/img/certificates/Server-side Development with NodeJS, Express and MongoDB.jpeg"
-                  alt="Certificate 5"></li>
-              <li class="glide__slide"><img src="assets/img/certificates/CERTIFICATE_Work_Smarter_Not_Harder.jpeg"
-                  alt="Certificate 6"></li>
-            </ul>
-          </div>
+            <div class="pt-6">
+              <div class="flex items-end justify-between">
+                <h4 class="font-body font-semibold uppercase text-black">
+                  Django
+                </h4>
+                <h3 class="font-body text-3xl font-bold text-primary">80%</h3>
+              </div>
+              <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                <div
+                  class="h-3 rounded-full bg-primary"
+                  style="width: 80%"
+                ></div>
+              </div>
+            </div>
 
-          <!-- Controls -->
-          <div class="glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow left-2 bg-white text-gray-900 rounded-full" data-glide-dir="<">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-              </svg>
-            </button>
-            <button class="glide__arrow right-2 bg-white text-gray-900 rounded-full" data-glide-dir=">">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </button>
+            <div class="pt-6">
+              <div class="flex items-end justify-between">
+                <h4 class="font-body font-semibold uppercase text-black">
+                  Express Js
+                </h4>
+                <h3 class="font-body text-3xl font-bold text-primary">70%</h3>
+              </div>
+              <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                <div
+                  class="h-3 rounded-full bg-primary"
+                  style="width: 70%"
+                ></div>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <div class="flex items-end justify-between">
+                <h4 class="font-body font-semibold uppercase text-black">
+                  MongoDB & Mongoose
+                </h4>
+                <h3 class="font-body text-3xl font-bold text-primary">70%</h3>
+              </div>
+              <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                <div
+                  class="h-3 rounded-full bg-primary"
+                  style="width: 70%"
+                ></div>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <div class="flex items-end justify-between">
+                <h4 class="font-body font-semibold uppercase text-black">
+                  SQL & MySQL
+                </h4>
+                <h3 class="font-body text-3xl font-bold text-primary">80%</h3>
+              </div>
+              <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                <div
+                  class="h-3 rounded-full bg-primary"
+                  style="width: 80%"
+                ></div>
+              </div>
+            </div>
+            <!-- More skills... -->
           </div>
         </div>
       </section>
 
-    </section>
-
-  </main>
-
-  <!-- Contact & Footer Section -->
-  <footer>
-    <div class="relative bg-primary bg-cover bg-center bg-no-repeat bg-blend-multiply"
-      style="background-image: url(assets/img/bg-hero.jpg)">
-      <!-- Contact Section -->
-      <section id="contact" class="py-16 lg:py-24">
-        <h2 class="text-center font-header text-4xl font-semibold uppercase text-white sm:text-5xl lg:text-6xl">
-          Here's a contact form
+      <!-- Work Section -->
+      <section id="work" class="container py-16 md:py-20">
+        <h2
+          class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl"
+        >
+          My work experience
         </h2>
-        <h4 class="pt-6 text-center font-header text-xl font-medium text-white sm:text-2xl lg:text-3xl">
-          Have Any Questions?
-        </h4>
-        <div class="mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
-          <p class="font-body text-grey-10">
-            <!-- todo -->
-          </p>
+        <h3
+          class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
+        >
+          Here's what I did before
+        </h3>
+
+        <div class="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
+          <!-- Divider -->
+          <span
+            class="absolute top-8 bottom-0 left-2/5 ml-10 hidden w-2 rounded-full bg-grey-40 md:block"
+          ></span>
+
+          <!-- Fifth Work Experience (Tripnest) -->
+          <article
+            class="mt-8 flex flex-col text-center md:flex-row md:text-left"
+          >
+            <div class="md:w-2/5">
+              <div class="flex justify-center md:justify-start">
+                <span class="shrink-0">
+                  <img
+                    src="assets/img/logos/logo-tripnest.png"
+                    class="h-auto w-32"
+                    alt="Company Logo"
+                  />
+                </span>
+                <div class="relative ml-3 hidden w-full rounded-full md:block">
+                  <span
+                    class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"
+                  ></span>
+                </div>
+                <div
+                  class="absolute left-2/5 ml-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block"
+                ></div>
+              </div>
+            </div>
+            <div class="md:w-3/5">
+              <div class="relative flex md:pl-18">
+                <div class="mt-1 flex">
+                  <i
+                    class="bx bxs-right-arrow hidden text-2xl text-primary md:block"
+                  ></i>
+                  <div class="md:-mt-1 md:pl-8">
+                    <time
+                      class="block font-body font-bold text-grey-40"
+                      datetime="2023-01-01"
+                      >Jan 2023 - Present</time
+                    >
+                    <h4
+                      class="block pt-2 font-header text-xl font-bold uppercase text-primary"
+                    >
+                      Full Stack Developer
+                    </h4>
+                    <div class="pt-2">
+                      <p class="block text-justify font-body text-black">
+                        Full stack developer of the
+                        <strong
+                          ><a href="https://www.tripnest.me/"
+                            ><i class="bx bx-link text-lg text-primary"></i
+                            >Tripnest</a
+                          ></strong
+                        >
+                        project, a platform for real estate rental services.
+                        Tripnest is built using the latest modern web
+                        technologies including Next.js 13, Prisma ORM, MongoDB,
+                        and more. It provides features for property listing,
+                        search, booking, and payment integration.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- First Work Experience -->
+          <article
+            class="mt-8 flex flex-col text-center md:flex-row md:text-left"
+          >
+            <div class="md:w-2/5">
+              <div class="flex justify-center md:justify-start">
+                <span class="shrink-0">
+                  <img
+                    src="assets/img/logo-cmsgu.svg"
+                    class="h-auto w-32"
+                    alt="Company Logo"
+                  />
+                </span>
+
+                <div class="relative ml-3 hidden w-full rounded-full md:block">
+                  <span
+                    class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"
+                  ></span>
+                </div>
+
+                <div
+                  class="absolute left-2/5 ml-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block"
+                ></div>
+              </div>
+            </div>
+
+            <div class="md:w-3/5">
+              <div class="relative flex md:pl-18">
+                <div class="mt-1 flex">
+                  <i
+                    class="bx bxs-right-arrow hidden w-8 text-2xl text-primary md:block"
+                  ></i>
+                  <div class="md:-mt-1 md:pl-8">
+                    <time
+                      class="block font-body font-bold text-grey-40"
+                      datetime="2020-04-01"
+                      >Apr 2020 - Sep 2020</time
+                    >
+                    <h4
+                      class="block pt-2 font-header text-xl font-bold uppercase text-primary"
+                    >
+                      Web Developer | Backend & Frontend
+                    </h4>
+                    <div class="pt-2">
+                      <p class="block text-justify font-body text-black">
+                        Web developer of
+                        <strong
+                          ><a
+                            target="_blank"
+                            href="https://github.com/chaalelidris/educational-committee-management-system"
+                            >“Educational committee management system - ECMS”</a
+                          ></strong
+                        >, a project that involves the study, design, and
+                        implementation of a platform for managing committees
+                        within the Guelma University departments. It enables
+                        effective administration and control of course leaders
+                        while collecting and tracking educational activity
+                        progress from teachers and student delegates.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Second Work Experience (SIHATE) -->
+          <article
+            class="mt-8 flex flex-col text-center md:flex-row md:text-left"
+          >
+            <div class="md:w-2/5">
+              <div class="flex justify-center md:justify-start">
+                <span class="shrink-0">
+                  <img
+                    src="assets/img/logo-sihate.svg"
+                    class="h-16 w-auto"
+                    alt="Company Logo"
+                  />
+                </span>
+
+                <div class="relative ml-3 hidden w-full rounded-full md:block">
+                  <div
+                    class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"
+                  ></div>
+                </div>
+
+                <div
+                  class="absolute left-2/5 ml-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block"
+                ></div>
+              </div>
+            </div>
+
+            <div class="md:w-3/5">
+              <div class="relative flex md:pl-18">
+                <div class="mt-1 flex">
+                  <i
+                    class="bx bxs-right-arrow hidden text-2xl text-primary md:block"
+                  ></i>
+                  <div class="md:-mt-1 md:pl-8">
+                    <time
+                      class="block font-body font-bold text-grey-40"
+                      datetime="2021-04-01"
+                      >Apr 2021 - Sep 2021</time
+                    >
+                    <h4
+                      class="block pt-2 font-header text-xl font-bold uppercase text-primary"
+                    >
+                      Project Manager & Web Developer
+                    </h4>
+                    <div class="pt-2">
+                      <p class="block text-justify font-body text-black">
+                        Project Manager and web developer of
+                        <strong
+                          ><a
+                            href="https://github.com/chaalelidris/SIHATE-HEALTHCARE-PROJECT-DJANGO.git"
+                            >“Sihate”</a
+                          ></strong
+                        >, a medical records management system that allows
+                        patients to make appointments and enables doctors to
+                        generate medical records and prescriptions. It was
+                        developed using Django Python framework, HTML5, CSS3,
+                        Bootstrap 5, and JavaScript.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Third Work Experience -->
+          <article
+            class="mt-8 flex flex-col text-center md:flex-row md:text-left"
+          >
+            <div class="md:w-2/5">
+              <div class="flex justify-center md:justify-start">
+                <span class="shrink-0">
+                  <img
+                    src="assets/img/logo-gr.svg"
+                    class="h-auto w-14"
+                    alt="Company Logo"
+                  />
+                </span>
+                <div class="relative ml-3 hidden w-full rounded-full md:block">
+                  <span
+                    class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"
+                  ></span>
+                </div>
+                <div
+                  class="absolute left-2/5 ml-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block"
+                ></div>
+              </div>
+            </div>
+            <div class="md:w-3/5">
+              <div class="relative flex md:pl-18">
+                <div class="mt-1 flex">
+                  <i
+                    class="bx bxs-right-arrow hidden text-2xl text-primary md:block"
+                  ></i>
+                  <div class="md:-mt-1 md:pl-8">
+                    <time
+                      class="block font-body font-bold text-grey-40"
+                      datetime="2022-05-01"
+                      >May 2022 - Jul 2022</time
+                    >
+                    <h4
+                      class="block pt-2 font-header text-xl font-bold uppercase text-primary"
+                    >
+                      Machine Learning Developer
+                    </h4>
+                    <div class="pt-2">
+                      <p class="block text-justify font-body text-black">
+                        Machine learning developer of the "Dynamic Hand Gesture
+                        Recognition" project using 2D & 3D CNN.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Fourth Work Experience -->
+          <article
+            class="mt-8 flex flex-col text-center md:flex-row md:text-left"
+          >
+            <div class="md:w-2/5">
+              <div class="flex justify-center md:justify-start">
+                <span class="shrink-0">
+                  <img
+                    src="assets/img/logo-newsize.svg"
+                    class="h-auto w-32"
+                    alt="Company Logo"
+                  />
+                </span>
+                <div class="relative ml-3 hidden w-full rounded-full md:block">
+                  <span
+                    class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"
+                  ></span>
+                </div>
+                <div
+                  class="absolute left-2/5 ml-6 hidden h-10 w-10 rounded-full border-4 border-white bg-grey-40 md:block"
+                ></div>
+              </div>
+            </div>
+            <div class="md:w-3/5">
+              <div class="relative flex md:pl-18">
+                <div class="mt-1 flex">
+                  <i
+                    class="bx bxs-right-arrow hidden text-2xl text-primary md:block"
+                  ></i>
+                  <div class="md:-mt-1 md:pl-8">
+                    <time
+                      class="block font-body font-bold text-grey-40"
+                      datetime="2022-08-01"
+                      >Aug 2022 - Present</time
+                    >
+                    <h4
+                      class="block pt-2 font-header text-xl font-bold uppercase text-primary"
+                    >
+                      Django Web Developer
+                    </h4>
+                    <div class="pt-2">
+                      <p class="block text-justify font-body text-black">
+                        Django web developer of
+                        <strong
+                          ><a
+                            target="_blank"
+                            href="https://github.com/chaalelidris/newsizedz"
+                            >“Newsize - Ecom Website”</a
+                          ></strong
+                        >, an e-commerce website built using the Django
+                        framework. Newsize offers various features such as user
+                        authentication, product management, and Stripe payment
+                        gateway.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
+      </section>
+      <!-- End Work Section -->
 
-        <form class="mx-auto w-5/6 pt-10" method="post" action="https://formspree.io/f/maykdobp">
-          <div class="flex flex-col md:flex-row">
-            <input
-              class="mr-3 w-full rounded border-2 border-grey-50 bg-transparent px-4 py-3 font-body text-white placeholder-gray-400 hover:border-yellow focus:border-yellow focus:outline-0 md:w-1/2 lg:mr-5"
-              name="fullname" placeholder="Full name" type="text" id="name" required />
-            <input
-              class="mt-6 w-full rounded border-2 border-grey-50 bg-transparent px-4 py-3 font-body text-white placeholder-gray-400 hover:border-yellow focus:border-yellow focus:outline-0 md:mt-0 md:ml-3 md:w-1/2 lg:ml-5"
-              name="email" placeholder="Your email" type="email" id="contact-email" required />
+      <!-- Portfolio Section -->
+      <section id="portfolio" class="container py-16 md:py-20">
+        <h2
+          class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl"
+        >
+          Check out my Portfolio
+        </h2>
+        <h3
+          class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
+        >
+          Here's what I have done in the past
+        </h3>
+        <p
+          class="pt-6 text-center font-body text-sm font-medium text-gray-400 sm:text-2xl lg:text-3xl"
+        >
+          All project details are available on my
+          <a
+            target="_blank"
+            href="https://github.com/chaalelidris"
+            class="pl-4"
+          >
+            <i class="bx bxl-github text-4xl text-black hover:text-yellow"></i>
+            GitHub
+          </a>
+        </p>
+
+        <div
+          class="mx-auto grid w-full grid-cols-1 gap-6 pt-12 md:grid-cols-3 lg:grid-cols-4"
+        >
+          <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+            <a target="_blank" href="https://www.tripnest.me">
+              <img
+                src="assets/img/portfolio-tripnest.png"
+                class="h-56 w-100 rounded-2xl object-cover shadow"
+                alt="portfolio image"
+              />
+            </a>
           </div>
-          <textarea name="content"
-            class="mt-6 w-full rounded border-2 border-grey-50 bg-transparent px-4 py-3 font-body text-white placeholder-gray-400 hover:border-yellow focus:border-yellow focus:outline-0 md:mt-8"
-            placeholder="Message" id="message" cols="30" rows="10" required></textarea>
-          <button type="submit"
-            class="mt-6 flex w-full items-center justify-center rounded bg-primary px-8 py-3 font-header text-lg font-bold uppercase text-white placeholder-gray-400 transition-all hover:bg-yellow hover:text-primary">
-            Send
-            <i class="bx bx-chevron-right relative -right-2 text-3xl"></i>
-          </button>
-        </form>
 
-        <div class="mx-auto flex w-5/6 flex-col justify-between pt-16 lg:flex-row">
-          <div class="w-full border-l-2 border-t-2 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3">
-            <div class="flex items-center">
-              <i class="bx bx-phone text-2xl text-grey-40"></i>
-              <p class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
-                My Phone
+          <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+            <a target="_blank" href="https://chaalelidris.github.io/">
+              <img
+                src="assets/img/portfolio-idris-chaalel.png"
+                class="h-56 w-100 overflow-hidden rounded-2xl object-cover shadow"
+                alt="portfolio image"
+              />
+            </a>
+          </div>
+
+          <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+            <a
+              target="_blank"
+              href="https://www.figma.com/proto/YwLXHzmytLkwGt53ljS6mW/Mig-farm-project?page-id=0%3A1&node-id=6%3A6&viewport=468%2C149%2C0.21&scaling=min-zoom"
+            >
+              <img
+                src="assets/img/portfolio-migfarm-project.png"
+                class="h-56 w-100 overflow-hidden rounded-2xl object-cover shadow"
+                alt="portfolio image"
+              />
+            </a>
+          </div>
+
+          <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+            <a
+              target="_blank"
+              href="https://github.com/chaalelidris/educational-committee-management-system.git"
+            >
+              <img
+                src="assets/img/portfolio-comite-managment-system.png"
+                class="h-56 w-100 rounded-2xl object-cover shadow"
+                alt="portfolio image"
+              />
+            </a>
+          </div>
+
+          <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+            <a
+              target="_blank"
+              href="https://github.com/chaalelidris/SIHATE-HEALTHCARE-PROJECT-DJANGO.git"
+            >
+              <img
+                src="assets/img/portfolio-sihate-healthcare.png"
+                class="h-56 w-100 rounded-2xl object-cover shadow"
+                alt="portfolio image"
+              />
+            </a>
+          </div>
+
+          <div class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+            <a
+              target="_blank"
+              href="https://github.com/chaalelidris/newsizedz.git"
+            >
+              <img
+                src="assets/img/logo-newsize.png"
+                class="h-56 w-100 rounded-2xl object-cover shadow"
+                alt="portfolio image"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Review -->
+      <section id="review" class="container py-16 md:py-20">
+        <h2
+          class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl"
+        >
+          Client Review
+        </h2>
+        <section class="relative isolate overflow-hidden bg-white px-6 lg:px-8">
+          <div
+            class="bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] absolute inset-0 -z-10 opacity-20"
+          ></div>
+          <div
+            class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"
+          ></div>
+          <div class="mx-auto max-w-2xl lg:max-w-4xl">
+            <figure class="mt-10">
+              <blockquote
+                class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9"
+              >
+                <p>
+                  “The code is very clean, the work is beautiful, delivered
+                  before the deadline, I recommend dealing with idris”
+                </p>
+              </blockquote>
+              <figcaption class="mt-10">
+                <img
+                  class="mx-auto h-10 w-10 rounded-full"
+                  src="https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png"
+                  alt=""
+                />
+                <div
+                  class="mt-4 flex items-center justify-center space-x-3 text-base"
+                >
+                  <div class="font-semibold text-gray-900">Ali Khalid</div>
+                  <svg
+                    viewBox="0 0 2 2"
+                    width="3"
+                    height="3"
+                    aria-hidden="true"
+                    class="fill-gray-900"
+                  >
+                    <circle cx="1" cy="1" r="1" />
+                  </svg>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+        <div class="mx-auto mt-10 flex justify-center text-center">
+          <a
+            href="https://mostaql.com/u/chaalel_idris24/reviews/5230882"
+            target="_blank"
+          >
+            <img
+              src="assets/img/Reviews/review-1.png"
+              alt="development icon"
+              class="cursor-pointer rounded-3xl"
+            />
+          </a>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="container py-16 md:py-20">
+        <h2
+          class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl"
+        >
+          Here's what I'm good at
+        </h2>
+        <h3
+          class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
+        >
+          These are the services I offer
+        </h3>
+
+        <div
+          class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3"
+        >
+          <div
+            class="group cursor-pointer rounded-2xl px-8 py-12 shadow transition duration-300 ease-in-out hover:scale-105 hover:bg-primary"
+          >
+            <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+              <img
+                src="assets/img/icon-development-white.svg"
+                alt="development icon"
+                class="hidden group-hover:block"
+              />
+              <img
+                src="assets/img/icon-development-black.svg"
+                alt="development icon"
+                class="block group-hover:hidden"
+              />
+            </div>
+            <div class="text-center">
+              <h3
+                class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl"
+              >
+                WEB DEVELOPMENT
+              </h3>
+              <p
+                class="text-grey pt-4 text-sm group-hover:text-white md:text-base"
+              >
+                <!-- todo -->
               </p>
             </div>
-            <p class="pt-2 text-left font-body font-bold text-yellow hover:text-white lg:text-lg">
-              <a href="tel:+213781878274">(+213) 781 878 274</a>
-            </p>
           </div>
 
           <div
-            class="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-2 lg:border-t-2">
-            <div class="flex items-center">
-              <i class="bx bx-envelope text-2xl text-grey-40"></i>
-              <p class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
-                My Email
+            class="group cursor-pointer rounded-2xl px-8 py-12 shadow transition duration-300 ease-in-out hover:scale-105 hover:bg-primary"
+          >
+            <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+              <img
+                src="assets/img/icon-mobile-white.svg"
+                alt="Mobile Application icon"
+                class="hidden group-hover:block"
+              />
+              <img
+                src="assets/img/icon-mobile-black.svg"
+                alt="Mobile Application icon"
+                class="block group-hover:hidden"
+              />
+            </div>
+            <div class="text-center">
+              <h3
+                class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl"
+              >
+                Mobile Development
+              </h3>
+              <p
+                class="text-grey pt-4 text-sm group-hover:text-white md:text-base"
+              >
+                <!-- todo -->
               </p>
             </div>
-            <p class="pt-2 text-left font-body font-bold text-yellow hover:text-white lg:text-lg">
-              <a href="mailto:i.chaalel@esi-sba.dz">i.chaalel@esi-sba.dz</a>
-            </p>
+          </div>
+
+          <div
+            class="group cursor-pointer rounded-2xl px-8 py-12 shadow transition duration-300 ease-in-out hover:scale-105 hover:bg-primary"
+          >
+            <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+              <img
+                src="assets/img/icon-design-white.svg"
+                alt="Theme Design icon"
+                class="hidden group-hover:block"
+              />
+              <img
+                src="assets/img/icon-design-black.svg"
+                alt="Theme Design icon"
+                class="block group-hover:hidden"
+              />
+            </div>
+            <div class="text-center">
+              <h3
+                class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl"
+              >
+                Graphic Design
+              </h3>
+              <p
+                class="text-grey pt-4 text-sm group-hover:text-white md:text-base"
+              >
+                <!-- todo -->
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="group cursor-pointer rounded-2xl px-8 py-12 shadow transition duration-300 ease-in-out hover:scale-105 hover:bg-primary"
+          >
+            <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+              <img
+                src="assets/img/icon-graphics-white.svg"
+                alt="Graphic Design icon"
+                class="hidden group-hover:block"
+              />
+              <img
+                src="assets/img/icon-graphics-black.svg"
+                alt="Graphic Design icon"
+                class="block group-hover:hidden"
+              />
+            </div>
+            <div class="text-center">
+              <h3
+                class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl"
+              >
+                Web Design
+              </h3>
+              <p
+                class="text-grey pt-4 text-sm group-hover:text-white md:text-base"
+              >
+                <!-- todo -->
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <hr class="mx-auto my-20 w-3/4" />
+      <!-- Statistics Section -->
+      <section
+        id="statistics"
+        class="mt-10 bg-cover bg-top bg-no-repeat pt-36 pb-12 lg:pt-52"
+        style="background-image: url(assets/img/experience-figure.svg)"
+      >
+        <div
+          class="mx-auto w-11/12 rounded-2xl border border-gray-400 bg-white/5 py-16 shadow-2xl shadow-slate-900 lg:py-20 xl:py-24"
+        >
+          <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-8">
+            <div
+              class="flex flex-col items-center justify-center border-r border-gray-400 text-center md:flex-row md:text-left"
+            >
+              <div>
+                <img
+                  src="assets/img/icon-project-white.svg"
+                  class="mx-auto h-12 w-auto md:h-20"
+                  alt="icon project"
+                />
+              </div>
+              <div class="pt-5 md:pl-5 md:pt-0">
+                <h1
+                  class="font-body text-2xl font-bold text-yellow md:text-4xl"
+                >
+                  5
+                </h1>
+                <h4
+                  class="font-header text-base font-medium leading-loose text-grey-50 md:text-xl"
+                >
+                  Finished Projects
+                </h4>
+              </div>
+            </div>
 
-      <!-- Footer Section -->
-      <section class="mx-auto flex w-3/4 flex-col justify-between md:flex-row pb-12">
-        <p class="text-center font-body text-white md:text-left">
-          © 2022. All rights reserved, Idris CHAALEL.
-        </p>
-        <div class="flex items-center justify-center pt-6 md:justify-start md:pt-0">
-          <a target="_blank" href="https://www.facebook.com/idrischaalel/">
-            <i class="bx bxl-facebook-square text-4xl text-white hover:text-yellow"></i>
-          </a>
-          <a target="_blank" href="https://twitter.com/chaalel_idris" class="pl-4">
-            <i class="bx bxl-twitter text-4xl text-white hover:text-yellow"></i>
-          </a>
-          <a target="_blank" href="https://github.com/chaalelidris" class="pl-4">
-            <i class="bx bxl-github text-4xl text-white hover:text-yellow"></i>
-          </a>
-          <a target="_blank" href="https://www.linkedin.com/in/chaalel-idris" class="pl-4">
-            <i class="bx bxl-linkedin text-4xl text-white hover:text-yellow"></i>
-          </a>
-          <a target="_blank" href="https://www.instagram.com/idris_chaalel/" class="pl-4">
-            <i class="bx bxl-instagram text-4xl text-white hover:text-yellow"></i>
-          </a>
+            <div
+              class="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-left lg:mt-0"
+            >
+              <div>
+                <img
+                  src="assets/img/icon-puzzle-white.svg"
+                  class="mx-auto h-12 w-auto md:h-20"
+                  alt="icon puzzle"
+                />
+              </div>
+              <div class="pt-5 md:pl-5 md:pt-0">
+                <h1
+                  class="font-body text-2xl font-bold text-yellow md:text-4xl"
+                >
+                  5
+                </h1>
+                <h4
+                  class="font-header text-base font-medium leading-loose text-grey-50 md:text-xl"
+                >
+                  Years Experience
+                </h4>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Certificates -->
+        <section id="certificates" class="mx-auto mt-10 w-5/6 bg-transparent">
+          <div class="images glide">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides">
+                <li class="glide__slide">
+                  <img
+                    src="assets/img/certificates/IDRIS CHAALEL - Intro to Machine Learning.png"
+                    alt="Intro to Machine Learning Certificate"
+                  />
+                </li>
+                <li class="glide__slide">
+                  <img
+                    src="assets/img/certificates/UC-6768e143-ded3-4063-8139-925c3647d050.jpg"
+                    alt="Certificate 1"
+                  />
+                </li>
+                <li class="glide__slide">
+                  <img
+                    src="assets/img/certificates/UC-5d3f3617-e326-4be8-a76b-a070bc77ce26.jpg"
+                    alt="Certificate 2"
+                  />
+                </li>
+                <li class="glide__slide">
+                  <img
+                    src="assets/img/certificates/Coursera 7J5R6HWC9FRD.jpg"
+                    alt="Certificate 3"
+                  />
+                </li>
+                <li class="glide__slide">
+                  <img
+                    src="assets/img/certificates/Coursera-version-control-with-git.png"
+                    alt="Certificate 4"
+                  />
+                </li>
+                <li class="glide__slide">
+                  <img
+                    src="assets/img/certificates/Server-side Development with NodeJS, Express and MongoDB.jpeg"
+                    alt="Certificate 5"
+                  />
+                </li>
+                <li class="glide__slide">
+                  <img
+                    src="assets/img/certificates/CERTIFICATE_Work_Smarter_Not_Harder.jpeg"
+                    alt="Certificate 6"
+                  />
+                </li>
+              </ul>
+            </div>
+
+            <!-- Controls -->
+            <div class="glide__arrows" data-glide-el="controls">
+              <button
+                class="glide__arrow left-2 rounded-full bg-white text-gray-900"
+                data-glide-dir="<"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 19.5L8.25 12l7.5-7.5"
+                  />
+                </svg>
+              </button>
+              <button
+                class="glide__arrow right-2 rounded-full bg-white text-gray-900"
+                data-glide-dir=">"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
       </section>
-    </div>
-  </footer>
+    </main>
 
+    <!-- Contact & Footer Section -->
+    <footer>
+      <div
+        class="relative bg-primary bg-cover bg-center bg-no-repeat bg-blend-multiply"
+        style="background-image: url(assets/img/bg-hero.jpg)"
+      >
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 lg:py-24">
+          <h2
+            class="text-center font-header text-4xl font-semibold uppercase text-white sm:text-5xl lg:text-6xl"
+          >
+            Here's a contact form
+          </h2>
+          <h4
+            class="pt-6 text-center font-header text-xl font-medium text-white sm:text-2xl lg:text-3xl"
+          >
+            Have Any Questions?
+          </h4>
+          <div class="mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
+            <p class="font-body text-grey-10">
+              <!-- todo -->
+            </p>
+          </div>
 
-  <script src="assets/js/dist/cdn.min.js" defer></script>
-  <script src="assets/js/cdn.min.js" defer></script>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/glide.min.js"></script>
+          <form
+            class="mx-auto w-5/6 pt-10"
+            method="post"
+            action="https://formspree.io/f/maykdobp"
+          >
+            <div class="flex flex-col md:flex-row">
+              <input
+                class="mr-3 w-full rounded border-2 border-grey-50 bg-transparent px-4 py-3 font-body text-white placeholder-gray-400 hover:border-yellow focus:border-yellow focus:outline-0 md:w-1/2 lg:mr-5"
+                name="fullname"
+                placeholder="Full name"
+                type="text"
+                id="name"
+                required
+              />
+              <input
+                class="mt-6 w-full rounded border-2 border-grey-50 bg-transparent px-4 py-3 font-body text-white placeholder-gray-400 hover:border-yellow focus:border-yellow focus:outline-0 md:mt-0 md:ml-3 md:w-1/2 lg:ml-5"
+                name="email"
+                placeholder="Your email"
+                type="email"
+                id="contact-email"
+                required
+              />
+            </div>
+            <textarea
+              name="content"
+              class="mt-6 w-full rounded border-2 border-grey-50 bg-transparent px-4 py-3 font-body text-white placeholder-gray-400 hover:border-yellow focus:border-yellow focus:outline-0 md:mt-8"
+              placeholder="Message"
+              id="message"
+              cols="30"
+              rows="10"
+              required
+            ></textarea>
+            <button
+              type="submit"
+              class="mt-6 flex w-full items-center justify-center rounded bg-primary px-8 py-3 font-header text-lg font-bold uppercase text-white placeholder-gray-400 transition-all hover:bg-yellow hover:text-primary"
+            >
+              Send
+              <i class="bx bx-chevron-right relative -right-2 text-3xl"></i>
+            </button>
+          </form>
 
-  <script>
-    const glideConfig = {
-      type: "carousel",
-      focusAt: '2',
-      autoplay: 2500,
-      perView: 2,
-      breakpoints: {
-        1024: {
-          perView: 2
+          <div
+            class="mx-auto flex w-5/6 flex-col justify-between pt-16 lg:flex-row"
+          >
+            <div
+              class="w-full border-l-2 border-t-2 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3"
+            >
+              <div class="flex items-center">
+                <i class="bx bx-phone text-2xl text-grey-40"></i>
+                <p
+                  class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg"
+                >
+                  My Phone
+                </p>
+              </div>
+              <p
+                class="pt-2 text-left font-body font-bold text-yellow hover:text-white lg:text-lg"
+              >
+                <a href="tel:+213781878274">(+213) 781 878 274</a>
+              </p>
+            </div>
+
+            <div
+              class="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-2 lg:border-t-2"
+            >
+              <div class="flex items-center">
+                <i class="bx bx-envelope text-2xl text-grey-40"></i>
+                <p
+                  class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg"
+                >
+                  My Email
+                </p>
+              </div>
+              <p
+                class="pt-2 text-left font-body font-bold text-yellow hover:text-white lg:text-lg"
+              >
+                <a href="mailto:i.chaalel@esi-sba.dz">i.chaalel@esi-sba.dz</a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <hr class="mx-auto my-20 w-3/4" />
+
+        <!-- Footer Section -->
+        <section
+          class="mx-auto flex w-3/4 flex-col justify-between pb-12 md:flex-row"
+        >
+          <p class="text-center font-body text-white md:text-left">
+            © 2022. All rights reserved, Idris CHAALEL.
+          </p>
+          <div
+            class="flex items-center justify-center pt-6 md:justify-start md:pt-0"
+          >
+            <a target="_blank" href="https://www.facebook.com/idrischaalel/">
+              <i
+                class="bx bxl-facebook-square text-4xl text-white hover:text-yellow"
+              ></i>
+            </a>
+            <a
+              target="_blank"
+              href="https://twitter.com/chaalel_idris"
+              class="pl-4"
+            >
+              <i
+                class="bx bxl-twitter text-4xl text-white hover:text-yellow"
+              ></i>
+            </a>
+            <a
+              target="_blank"
+              href="https://github.com/chaalelidris"
+              class="pl-4"
+            >
+              <i
+                class="bx bxl-github text-4xl text-white hover:text-yellow"
+              ></i>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/chaalel-idris"
+              class="pl-4"
+            >
+              <i
+                class="bx bxl-linkedin text-4xl text-white hover:text-yellow"
+              ></i>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.instagram.com/idris_chaalel/"
+              class="pl-4"
+            >
+              <i
+                class="bx bxl-instagram text-4xl text-white hover:text-yellow"
+              ></i>
+            </a>
+          </div>
+        </section>
+      </div>
+    </footer>
+
+    <script src="assets/js/dist/cdn.min.js" defer></script>
+    <script src="assets/js/cdn.min.js" defer></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/glide.min.js"></script>
+
+    <script>
+      const glideConfig = {
+        type: "carousel",
+        focusAt: "2",
+        autoplay: 2500,
+        perView: 2,
+        breakpoints: {
+          1024: {
+            perView: 2,
+          },
+          600: {
+            perView: 1,
+          },
         },
-        600: {
-          perView: 1
-        }
-      }
+      };
 
-    };
-
-    new Glide('.glide', glideConfig).mount()
-  </script>
-
-</body>
-
+      new Glide(".glide", glideConfig).mount();
+    </script>
+  </body>
 </html>
