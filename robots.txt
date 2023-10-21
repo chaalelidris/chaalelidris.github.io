@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /private/
+Disallow: /admin/
+Disallow: /secret-page/
+Disallow: /temporarily-offline/
+
+# Allow crawling of certain sections
+Allow: /public/
+
+# Reference to the sitemap
+Sitemap: https://www.idrischaalel.tech/sitemap.xml
