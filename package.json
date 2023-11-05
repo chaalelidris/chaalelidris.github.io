@@ -6,9 +6,9 @@
   "scripts": {
     "build-css": "tailwindcss build -i src/styles/main.css -o assets/styles/main.min.css",
     "css": "postcss src/styles/main.css -o assets/styles/main.min.css --verbose",
-    "server-reload": "browser-sync start --config './browser-sync-config.js'",
-    "develop": "concurrently 'npm:css -- --watch' 'npm:server-reload'",
-    "build": "npm run css -- --env 'production'",
+    "server-reload": "browser-sync start --config ./browser-sync-config.js",
+    "develop": "concurrently \"npm:css --watch\" \"npm:server-reload\"",
+    "build": "npm run css --env 'production'",
     "format": "npx prettier ./**/*.html"
   },
   "browserslist": [
@@ -21,6 +21,7 @@
     "@tailwindcss/forms": "^0.4.1",
     "@tailwindcss/typography": "^0.5.7",
     "browser-sync": "^2.27.10",
+    "caniuse-lite": "^1.0.30001561",
     "concurrently": "^7.4.0",
     "cssnano": "^5.1.13",
     "postcss-cli": "^9.1.0"
