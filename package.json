@@ -7,7 +7,7 @@
     "build-css": "tailwindcss build -i src/styles/main.css -o assets/styles/main.min.css",
     "css": "postcss src/styles/main.css -o assets/styles/main.min.css --verbose",
     "server-reload": "browser-sync start --config ./browser-sync-config.js",
-    "develop": "concurrently \"npm:css --watch\" \"npm:server-reload\"",
+    "develop": "concurrently \"npm:css -- --watch\" \"npm:server-reload\" \"npm:format\"",
     "build": "npm run css --env 'production'",
     "format": "npx prettier ./**/*.html"
   },
